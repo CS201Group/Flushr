@@ -1,7 +1,40 @@
 /* elements */
+body {
+    background-color: #FFEEBE;
+}
 
+h1 {
+    font-size: 28px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 20px;
+    text-align: center;
+}
+
+p {
+    font-size: 12px;
+    text-align: center;
+}
 /* classes */
 
 /* ids */
+#title {
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -130%);
 
+font-family: 'Nunito';
+font-style: normal;
+font-weight: 800;
+font-size: 100px;
+line-height: 136px;
+text-align: center;
+
+color: #CB743F;
+
+}
 /* other */
