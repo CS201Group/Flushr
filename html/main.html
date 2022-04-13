@@ -26,19 +26,19 @@
       <form>
         <div id="mapDiv">
             <a id="map"></a>
-            <div id="searchBarDiv">
-                <input type="submit" id="searchButton" name="searchButton">
+            <div id="searchBarDiv" class="yellowButton">
+                <input type="submit" id="searchButton"  name="searchButton">
                 <input type="textarea" id="searchText" name="searchText" placeholder="Search for nearby bathrooms...">
             </div>
             <div id="sortDiv">
-                <input list="sortCriteria" id="sortList" placeholder="Sort by...">
+                <input list="sortCriteria" id="sortList" class="yellowButton" placeholder="Sort by...">
                 <datalist id="sortCriteria">
                     <option value="A">
                     <option value="B">
                     <option value="C">
                     <option value="D">
                 </datalist>
-                <input list="filterCriteria" id="filterList" placeholder="Filter by...">
+                <input list="filterCriteria" id="filterList" class="yellowButton" placeholder="Filter by...">
                 <datalist id="filterCriteria">
                     <option value="A">
                     <option value="B">
@@ -47,8 +47,17 @@
                 </datalist>
             </div>
             <div id="resultsDiv" >
-                <p id="resultsTitle">We found the best bathrooms for you.</p>
+                <p id="resultsTitle" class="blueTitle">We found the best bathrooms for you.</p>
             </div>
+            <div id="resultsData">
+                <div id="result">
+                    <p class="resultText">Ronald Tutor Hall (RTC)</p>
+                    <p class="resultDist">0.1mi</p>
+                    <p class="resultRating">4.73/5</p>
+                </div>
+                
+            </div>
+            
         </div>
         
     </form>

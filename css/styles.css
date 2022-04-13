@@ -1,7 +1,7 @@
 /* elements */
 body {
     background-color: #FFEEBE;
-    height:100rem;
+    height:35rem;
 }
 
 header {
@@ -38,6 +38,57 @@ p {
     margin-left: 5%;
 }
 
+.resultText {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: left;
+    color: #31393C;
+    display: inline-block;
+
+}
+
+.resultDist {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: right;
+    color: #31393C;
+    display: inline-block;
+
+}
+
+.resultRating {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: right;
+    color: #31393C;
+    display: inline-block;
+
+}
+
+.blueTitle {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 41px;
+    color: #2176FF;
+}
+
+.yellowButton {
+    height: 3rem;
+    background: #FDCA40;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
 /* ids */
 #title {
     margin: 0px;
@@ -47,7 +98,6 @@ p {
     font-size: 100px;
     line-height: 136px;
     text-align: center;
-
     color: #CB743F;
 
 }
@@ -121,7 +171,6 @@ p {
 }
 
 #guestButton {
-    
     background: none;
     border: none;
     text-decoration: underline;
@@ -158,7 +207,6 @@ p {
     top: 14%;
     left: 7.5%;
     width: 85%; 
-
 }
 
 #map {
@@ -172,9 +220,7 @@ p {
 #searchBarDiv {
     margin-top: 1.5%;
     width: 100%;
-    height: 3rem;
-    background: #FDCA40;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);    
+        
 }
 
 #searchButton {
@@ -213,19 +259,13 @@ p {
     width: 48.5%;
     border: none;
     align-items: center;
-    height: 3rem;
-    background: #FDCA40;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin-right: 1%;    
 }
 
 #filterList {
     width: 48.5%;
     border: none;
-    align-items: center;
-    height: 3rem;
-    background: #FDCA40;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+    align-items: center; 
     margin-left: 1%;  
 }
 
@@ -235,14 +275,13 @@ p {
 
 #resultsTitle {
     text-align: left;
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 30px;
-    line-height: 41px;
-
-    color: #2176FF;
-
 }
+
+#resultsData {
+    overflow: auto;
+    margin-top: 0;
+}
+
+
 
 /* other */
