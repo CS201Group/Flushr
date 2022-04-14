@@ -195,6 +195,18 @@ p {
 
 }
 
+#slogan{
+    position: absolute;
+    left: 3%;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 1.8rem;
+    line-height: 130px;
+    display: flex;
+    align-items: center;
+}
+
 #menuButtons {
     position: absolute;
     right: 3%;
@@ -282,6 +294,34 @@ p {
     margin-top: 0;
 }
 
+#headerDiv{
+    position: absolute;
+    width: 1440px;
+    height: 325px;
+    left: 0px;
+    top: 0px;
 
+    background: #CB743F;
+}
+
+#searchDiv{
+    position: absolute;
+    width: 1021px;
+    height: 99px;
+    left: 209px;
+    top: 275px;
+
+    background: #FFEEBE;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#feedSearch{
+    width: 48.5%;
+    border: none;
+    align-items: center;
+    margin-right: 1%;    
+    height: 3rem;
+    background: #FFEEBE;
+}
 
 /* other */
