@@ -88,6 +88,42 @@ p {
     background: #FDCA40;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+.feedImgContainer{
+    width: 1340px;
+    height: 286px;
+    overflow: hidden;
+}
+
+.feedImg{
+    width: 100%;
+    height: 100%;
+
+}
+
+.brTitle{
+    position: relative;
+    left: 3%;
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 33px;
+
+    color: #2176FF;
+
+
+
+}
+.feedDesRow1{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.feedDescription{
+    padding-top: 10px;;
+}
 
 /* ids */
 #title {
@@ -313,6 +349,9 @@ p {
 
     background: #FFEEBE;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    display: flex;
+    align-items: center;
 }
 
 #feedSearch{
@@ -322,6 +361,59 @@ p {
     margin-right: 1%;    
     height: 3rem;
     background: #FFEEBE;
+    padding-left: 4%;
+}
+
+#searchIcon{
+    font-size: 50px;
+}
+
+#feedSearchButton{
+    padding-left: 5%;
+    background-color:#FFEEBE;
+    border: none;
+}
+
+#feedSubHeader{
+    position: absolute;
+
+    height: 30px;
+    left: 3%;
+    top: 400px;
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 33px;
+
+    color: #31393C;
+}
+
+#feedSubHeader2{
+    position: absolute;
+
+    height: 27px;
+    left: 3%;
+    top: 440px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #31393C;
+}
+
+#placeHolderImgFeed{
+    position: relative;
+    width: 1340px;
+    height: 286px;
+    left: 3%;
+    top: 511px;
+
+    background: #FDCA40;
 }
 
 /* other */
