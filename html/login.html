@@ -35,26 +35,6 @@
       }
     </script>
 
-    <style type="text/css">
-      #customBtn {
-      display: inline-block;
-      width: 100%;
-      white-space: nowrap;
-    }
-    #customBtn:hover {
-      cursor: pointer;
-    }
-    span.buttonText {
-      display: inline-block;
-      vertical-align: middle;
-      padding-left: 42px;
-      padding-right: 42px;
-      font-weight: bold;
-      /* Use the Roboto font that is loaded in the <head> */
-      font-family: 'Nunito', sans-serif;
-    }
-    </style>
-
   </head>
 
   <body onload="deleteAllCookies()">
@@ -65,12 +45,13 @@
       <h2 id="tagline">this is the sh*t</h2>
     </div>
 
+    <!-- GOOGLE SIGN-IN BUTTON -->
     <div id="my-signin2"></div>
 
-    <div class="row">
+    <div id="googleLogIn" class="row">
       <div class="col-md-3">
         <a class="btn btn-outline-dark" href="/users/googleauth" role="button" style="text-transform:none">
-          <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+          <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"/>
           Login with Google
         </a>
       </div>
