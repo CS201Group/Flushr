@@ -5,11 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Flushr</title>
+
+    <!----- BOOTSTRAP ----->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- GLOBAL STYLING -->
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
+
   </head>
   <body>
       <div id="headingDiv">
@@ -17,14 +24,14 @@
         <h2 id="tagline">don't wanna sign up? continue without an account <a href="main.html">here</a>.</h2>
       </div>
       
-      <!-- MANUAL LOG-IN -->
-      <div id="loginMenu" class="container">
+      <!-- MANUAL SIGN-IN -->
+    <div id="loginMenu" class="container">
 
       <form action="signup.html" method="POST">
 
         <!-- Username -->  
         <div class="form-group row justify-content-center">
-          <label for="username-id" class="col-sm-12 text-white text-center form-label-style">Username: <span class="text-danger">*</span></label>
+          <label for="username-id" class="loginText col-sm-12 text-center form-label-style">Username: <span class="text-danger">*</span></label>
           <div class="col-sm-12 col-md-8 col-lg-6">
             <input type="text" class="form-control" id="username-id" name="username">
                               <h3 id="username-error" class="invalid-feedback">Username is required.</h3>
@@ -33,7 +40,7 @@
 
         <!-- Password -->
         <div class="form-group row justify-content-center">
-          <label for="password-id" class="col-sm-12 text-white text-center form-label-style">Password: <span class="text-danger">*</span></label>
+          <label for="password-id" class="loginText col-sm-12 text-center form-label-style">Password: <span class="text-danger">*</span></label>
           <div class="col-sm-12 col-md-8 col-lg-6">
             <input type="password" class="form-control" id="password-id" name="password">
                               <h3 id="password-error" class="invalid-feedback">Password is required.</h3>
@@ -49,23 +56,25 @@
         
         <!-- Log-In Button -->
         <div class="row justify-content-center">
-          <button type="submit" class="btn btn-outline-light btn-lg">Login</button>
+          <button id="submitButton" type="submit" class="btn btn-outline-dark btn-lg">SIGN UP</button>
         </div>
       </form>
 
-    </div> 
+    </div>
+
+    <div id="padding"></div>
 
 
     <!-- GOOGLE LOG-IN BUTTON -->
     <div id="my-signin2">
       <div id="googleLogIn" class="row">
         <div class="col-md-3">
-          <a class="btn btn-outline-dark" href="/users/googleauth" role="button" style="text-transform:none">
-            <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"/>
-            Login with Google
+          <a id="googleButton" class="btn btn-outline-dark" href="/users/googleauth" role="button" style="text-transform:none">
+            <img width="20px" style="margin-bottom:0px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"/>SIGNUP WITH GOOGLE
           </a>
         </div>
       </div>
+    </div>
 
       
   </body>

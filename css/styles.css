@@ -290,7 +290,9 @@ p {
 
 #googleLogIn { /* google log-in api div */
     top: 80%;
-    left: 50%; 
+    left: 50%;
+    display: flex;
+    align-items: center;
 }
 
 #googleButton {
