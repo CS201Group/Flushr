@@ -193,6 +193,7 @@ p {
     margin-right: 2.5rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
+    margin-bottom: 2%;
 }
 
 #signInButton {
@@ -216,6 +217,10 @@ p {
     box-shadow: none;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
+}
+
+#mainButtons {
+    display: flex;
 }
 
 #guestButtonDiv {
