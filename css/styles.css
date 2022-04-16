@@ -41,6 +41,10 @@ p {
     margin-left: 5%;
 }
 
+.active {
+    color: #33A1FD;
+}
+
 /* landing page */
 .linkText {
     text-decoration: none;
