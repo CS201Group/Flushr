@@ -14,25 +14,57 @@
   <body>
       <div id="headingDiv">
         <h1 id="title">FLUSHR</h1>
-        <h2 id="tagline">this is the sh*t</h2>
+        <h2 id="tagline">don't wanna sign up? continue without an account <a href="main.html">here</a>.</h2>
       </div>
       
-      <div id="loginButtons">
-        <button id="loginButton">
-          <a class="linkText" href="login.html">LOGIN</a>
-        </button>
-        <button id="signInButton">
-          <a class="linkText" href="signup.html">SIGN UP</a>
-        </button>
-        <form>
-          <div id="guestButtonDiv">
-            <p id="guestText">in a hurry?</p>
-            <button id="guestButton">
-              <a class="guestText" href="main.html">view as guest</a>
-            </button>
+      <!-- MANUAL LOG-IN -->
+      <div id="loginMenu" class="container">
+
+      <form action="signup.html" method="POST">
+
+        <!-- Username -->  
+        <div class="form-group row justify-content-center">
+          <label for="username-id" class="col-sm-12 text-white text-center form-label-style">Username: <span class="text-danger">*</span></label>
+          <div class="col-sm-12 col-md-8 col-lg-6">
+            <input type="text" class="form-control" id="username-id" name="username">
+                              <h3 id="username-error" class="invalid-feedback">Username is required.</h3>
           </div>
-        </form>
-       
+        </div>
+
+        <!-- Password -->
+        <div class="form-group row justify-content-center">
+          <label for="password-id" class="col-sm-12 text-white text-center form-label-style">Password: <span class="text-danger">*</span></label>
+          <div class="col-sm-12 col-md-8 col-lg-6">
+            <input type="password" class="form-control" id="password-id" name="password">
+                              <h3 id="password-error" class="invalid-feedback">Password is required.</h3>
+          </div>
+        </div>
+
+        <!-- Required Text -->
+        <div class="row justify-content-center">
+          <div class="col-sm-12 col-md-8 col-lg-6">
+            <span class="text-danger font-italic">Required *</span>
+          </div>
+        </div>
+        
+        <!-- Log-In Button -->
+        <div class="row justify-content-center">
+          <button type="submit" class="btn btn-outline-light btn-lg">Login</button>
+        </div>
+      </form>
+
+    </div> 
+
+
+    <!-- GOOGLE LOG-IN BUTTON -->
+    <div id="my-signin2">
+      <div id="googleLogIn" class="row">
+        <div class="col-md-3">
+          <a class="btn btn-outline-dark" href="/users/googleauth" role="button" style="text-transform:none">
+            <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"/>
+            Login with Google
+          </a>
+        </div>
       </div>
 
       

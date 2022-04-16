@@ -53,6 +53,9 @@ p {
 }
 
 /* login page */
+.loginText {
+    color: #F79824;
+}
 
 /**/
 .resultText {
@@ -269,15 +272,70 @@ p {
 }
 
 /* login page */
-#googleLogIn { /* google log-in api div */
+#headingDivLogIn {
     position: fixed;
-    top: 70%;
+    top: 50%;
     left: 50%; 
+    transform: translate(-50%,-130%);
+}
+
+#googleLogIn, #loginMenu {
+    position: fixed;
     transform: translate(-50%, 0%);
     border-color: none;
     box-shadow: none;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
+}
+
+#googleLogIn { /* google log-in api div */
+    top: 80%;
+    left: 50%; 
+}
+
+#googleButton {
+    width: 259.26px;
+    height: 50px;
+    background: #FFEEBE;
+    border-radius: 30px;
+    border: 2px solid #33A1FD;
+    color: #31393C;
+    margin-right: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#googleButton:hover {
+    background-color: #33A1FD;
+    color: white;
+}
+
+
+#loginMenu {
+    top: 50%;
+    left: 50%; 
+}
+
+#submitButton {
+    margin-top: 3%;
+    width: 259.26px;
+    height: 50px;
+    background: #FFEEBE;
+    border-radius: 30px;
+    border: 2px solid #F79824;
+    color: #31393C;
+    margin-right: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    align-self: center;
+}
+
+#submitButton:hover {
+    background-color: #F79824;
+    color: white;
 }
 
 /* main feed */
