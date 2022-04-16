@@ -52,6 +52,7 @@ p {
     color: black;
 }
 
+/* login page */
 
 /**/
 .resultText {
@@ -143,6 +144,7 @@ p {
 
 /* ----- IDs ----- */
 
+/* landing page */
 #title {
     margin: 0px;
     font-family: 'Nunito';
@@ -163,7 +165,6 @@ p {
     font-size: 48px;
     line-height: 65px;
     text-align: center;
-
     color: #31393C;
 }
 
@@ -267,6 +268,19 @@ p {
     width: 23rem;
 }
 
+/* login page */
+#googleLogIn { /* google log-in api div */
+    position: fixed;
+    top: 70%;
+    left: 50%; 
+    transform: translate(-50%, 0%);
+    border-color: none;
+    box-shadow: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+/* main feed */
 #mapDiv {
     position: absolute;
     top: 14%;

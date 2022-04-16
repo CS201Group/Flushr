@@ -17,9 +17,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
 
-
-    <!----- GOOGLE SIGN-IN API CLIENT ----->
-    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    <!----- GOOGLE SIGN-IN API CLIENT LIBRARY ----->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 
     <!----- JAVASCRIPT ----->
     <!--delete cookies upon refresh-->
@@ -42,25 +41,26 @@
     <!-- HEADING -->
     <div id="headingDiv">
       <h1 id="title">FLUSHR</h1>
-      <h2 id="tagline">this is the sh*t</h2>
+      <h2 id="tagline">ready to log in?</h2>
     </div>
 
-    <!-- GOOGLE SIGN-IN BUTTON -->
-    <div id="my-signin2"></div>
-
-    <div id="googleLogIn" class="row">
-      <div class="col-md-3">
-        <a class="btn btn-outline-dark" href="/users/googleauth" role="button" style="text-transform:none">
-          <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"/>
-          Login with Google
-        </a>
+    <!-- GOOGLE LOG-IN BUTTON -->
+    <div id="my-signin2">
+      <div id="googleLogIn" class="row">
+        <div class="col-md-3">
+          <a class="btn btn-outline-dark" href="/users/googleauth" role="button" style="text-transform:none">
+            <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"/>
+            Login with Google
+          </a>
+        </div>
       </div>
     </div>
-      
 
-    <!-- google client library to integrate google sign-in api -->
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <!-- MANUAL LOG-IN -->
 
+    <!-- GO BACK / CONTINUE AS GUEST -->
     
+      
+  
   </body>
 </html>
