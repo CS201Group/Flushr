@@ -1,7 +1,7 @@
 /* ----- ELEMENTS ----- */
 
 body {
-    background-color: #FFEEBE;
+    background-color: hsl(44, 100%, 87%);
     height:35rem;
 }
 
@@ -32,13 +32,13 @@ p {
     font-style: normal;
     font-weight: 800;
     font-size: 1.75rem;
-    line-height: 38px;
-    display: inline-flex;
-    text-align: center;
+    /* line-height: 38px; */
+    /* display: inline-flex; */
+    /* text-align: center; */
     background: none;
     border: none;
     color: #31393C;
-    margin-left: 5%;
+    /* margin-left: 5%; */
 }
 
 /* landing page */
@@ -236,35 +236,36 @@ p {
 }
 
 #headerTitle {
-    position: absolute;
-    left: 3%;
+    /* position: relative; */
+    padding-left: 3%;
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 800;
     font-size: 2.5rem;
-    line-height: 49px;
+    /* line-height: 49px; */
     display: flex;
     align-items: center;
-
+    /* background-color: #31393C; */
 }
 
 #slogan{
-    position: absolute;
-    left: 3%;
+    /* position: absolute; */
+    padding-left: 3%;
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 800;
     font-size: 1.8rem;
-    line-height: 130px;
+    /* line-height: 130px; */
     display: flex;
     align-items: center;
+    /* background-color: yellow; */
 }
 
 #menuButtons {
-    position: absolute;
-    right: 3%;
-    top: 4%;
-    width: 23rem;
+    /* position: absolute; */
+    /* right: 3%; */
+    /* top: 4%; */
+    /* width: 23rem; */
 }
 
 #mapDiv {
@@ -348,12 +349,14 @@ p {
 }
 
 #headerDiv{
-    position: absolute;
-    width: 1440px;
+    position: relative;
+    /* width: 110%; */
     height: 325px;
     left: 0px;
     top: 0px;
-
+    /* margin-top: -10px;
+    margin-right: -10px;
+    margin-left: -10px; */
     background: #CB743F;
 }
 
