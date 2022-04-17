@@ -17,6 +17,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
 
+    <!-- RESPONSIVE MEDIA DESIGN -->
+    <style type="text/css">
+      @media screen and (max-width: 800px){
+        #headingDivLogIn {
+          top: 32%;
+          position: fixed;
+          margin:0;
+          padding:0;
+          width: 100%;
+        }
+        #title{
+          font-size: 60px;
+          line-height: 100%;
+        }
+        #tagline{
+          line-height: 90%;
+          font-size: 15px;
+        }
+        #loginMenu {
+          position: fixed;
+          top: 40%;
+        }
+        #submitButton {
+          display: inline-block;
+          align-items: center;
+          justify-content: center;
+          width: 80%;
+        }
+        #googleLogIn {
+          top: 85%;
+          margin: 0.25%;
+        }
+      }
+    </style>
+
     <!----- GOOGLE SIGN-IN API CLIENT LIBRARY ----->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 
