@@ -3,6 +3,7 @@
 body {
     background-color: hsl(44, 100%, 87%);
     height:35rem;
+    margin: 0px;
 }
 
 header {
@@ -33,12 +34,20 @@ p {
     font-weight: 800;
     font-size: 1.75rem;
     /* line-height: 38px; */
-    /* display: inline-flex; */
-    /* text-align: center; */
+    /* display: inline-flex;
+    text-align: center; */
     background: none;
     border: none;
     color: #31393C;
     /* margin-left: 5%; */
+    width: 110px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+}
+
+.active {
+    color: #33A1FD;
 }
 
 /* landing page */
@@ -52,6 +61,10 @@ p {
     color: black;
 }
 
+/* login page */
+.loginText {
+    color: #F79824;
+}
 
 /**/
 .resultText {
@@ -64,6 +77,13 @@ p {
     color: #31393C;
     display: inline-block;
 
+}
+
+.feedDirectionIcon{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
 }
 
 .resultDist {
@@ -117,8 +137,8 @@ p {
 }
 
 .brTitle{
-    position: relative;
-    left: 3%;
+    /* position: relative; */
+    left: 40px;
 
     font-family: 'Nunito';
     font-style: normal;
@@ -127,22 +147,65 @@ p {
     line-height: 33px;
 
     color: #2176FF;
-
-
-
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    padding: none;
+    margin: none;
 }
 .feedDesRow1{
     display: flex;
     align-items: center;
     flex-direction: row;
+    justify-content: space-between;
+    /* background-color: yellow; */
+    padding: none;
+    margin: none;
+}
+
+.feedDesRow2{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: -20px;
+    /* background-color: black; */
 }
 
 .feedDescription{
-    padding-top: 10px;;
+    padding-top: 10px;
+    margin-left: 40px;
+    margin-right: 60px;
+    background-color: none;
+
+}
+
+.feedWait{
+    /* display: flex;
+    align-items: center; */
+    /* justify-content: space-between; */
+    /* width: 300px; */
+    font-family: 'Montserrat';
+    font-style: normal;
+    /* font-weight: 500; */
+    /* font-size: 10px; */
+    /* line-height: 17px; */
+    display: flex;
+    align-items: flex-start;
+    text-align: right;
+
+    color: #31393C;
+
+
+}
+
+.feedWaitFont{
+    font-size: 14px;
 }
 
 /* ----- IDs ----- */
 
+/* landing page */
 #title {
     margin: 0px;
     font-family: 'Nunito';
@@ -163,7 +226,6 @@ p {
     font-size: 48px;
     line-height: 65px;
     text-align: center;
-
     color: #31393C;
 }
 
@@ -185,6 +247,7 @@ p {
     margin-right: 2.5rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
+    margin-bottom: 2%;
 }
 
 #signInButton {
@@ -208,6 +271,10 @@ p {
     box-shadow: none;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
+}
+
+#mainButtons {
+    display: flex;
 }
 
 #guestButtonDiv {
@@ -237,7 +304,7 @@ p {
 
 #headerTitle {
     /* position: relative; */
-    padding-left: 3%;
+    padding-left: 20px;
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 800;
@@ -245,12 +312,12 @@ p {
     /* line-height: 49px; */
     display: flex;
     align-items: center;
-    /* background-color: #31393C; */
+    background-color: none;
 }
 
 #slogan{
     /* position: absolute; */
-    padding-left: 3%;
+    padding-left: 20px;
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 800;
@@ -258,16 +325,88 @@ p {
     /* line-height: 130px; */
     display: flex;
     align-items: center;
-    /* background-color: yellow; */
+    background-color: none;
 }
 
 #menuButtons {
     /* position: absolute; */
-    /* right: 3%; */
-    /* top: 4%; */
-    /* width: 23rem; */
+    /* right: 3%;
+    top: 4%;
+    width: 23rem; */
+    display: flex;
+    justify-content: space-between;
 }
 
+/* login page */
+#headingDivLogIn {
+    position: fixed;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%,-130%);
+}
+
+#googleLogIn, #loginMenu {
+    position: fixed;
+    transform: translate(-50%, 0%);
+    border-color: none;
+    box-shadow: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+#googleLogIn { /* google log-in api div */
+    top: 80%;
+    left: 50%;
+    display: flex;
+    align-items: center;
+}
+
+#googleButton {
+    width: 259.26px;
+    height: 50px;
+    background: #FFEEBE;
+    border-radius: 30px;
+    border: 2px solid #33A1FD;
+    color: #31393C;
+    margin-right: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#googleButton:hover {
+    background-color: #33A1FD;
+    color: white;
+}
+
+
+#loginMenu {
+    top: 50%;
+    left: 50%; 
+}
+
+#submitButton {
+    margin-top: 3%;
+    width: 259.26px;
+    height: 50px;
+    background: #FFEEBE;
+    border-radius: 30px;
+    border: 2px solid #F79824;
+    color: #31393C;
+    margin-right: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    align-self: center;
+}
+
+#submitButton:hover {
+    background-color: #F79824;
+    color: white;
+}
+
+/* main feed */
 #mapDiv {
     position: absolute;
     top: 14%;
@@ -350,28 +489,34 @@ p {
 
 #headerDiv{
     position: relative;
-    /* width: 110%; */
-    height: 325px;
-    left: 0px;
-    top: 0px;
+    width: 100%;
+    /* height: 325px; */
+    /* left: 0px;
+    top: 0px; */
     /* margin-top: -10px;
     margin-right: -10px;
     margin-left: -10px; */
+    width: 100%;
+    padding-top: 20px;
+    height: 325px;
     background: #CB743F;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 #searchDiv{
-    position: absolute;
+    /* position: absolute; */
     width: 1021px;
     height: 99px;
-    left: 209px;
-    top: 275px;
 
     background: #FFEEBE;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
     display: flex;
     align-items: center;
+    margin-top: -50px;
+    z-index: 1;
 }
 
 #feedSearch{
@@ -395,45 +540,77 @@ p {
 }
 
 #feedSubHeader{
-    position: absolute;
+    /* position: absolute; */
 
-    height: 30px;
-    left: 3%;
-    top: 400px;
+    /* height: 30px; */
+    /* left: 3%;
+    top: 400px; */
 
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 800;
     font-size: 24px;
-    line-height: 33px;
-
+    /* line-height: 33px; */
+    text-align: left;
     color: #31393C;
 }
 
 #feedSubHeader2{
-    position: absolute;
+    /* position: absolute; */
 
-    height: 27px;
+    /* height: 27px;
     left: 3%;
-    top: 440px;
+    top: 440px; */
 
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
-    line-height: 17px;
-
+    /* line-height: 17px; */
+    text-align: left;
+    margin-top: -14px;
     color: #31393C;
 }
 
 #placeHolderImgFeed{
-    position: relative;
+    /* position: relative; */
     width: 1340px;
     height: 286px;
-    left: 3%;
-    top: 511px;
-
+    /* left: 3%;
+    top: 511px; */
+    margin-left: 40px;
     background: #FDCA40;
+}
+
+#logo{
+    white-space: nowrap;
+    padding-left: 20px;
+}
+
+#feedForm{
+    display: flex;
+    justify-content: center;
+}
+
+#feedDisplayHeader{
+    /* background-color: black; */
+    margin-top: 50px;
+    text-align: left;
+    padding-left: 40px;
+}
+
+#feedStars{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    /* line-height: 22px; */
+    display: flex;
+    align-items: center;
+
+    color: #FDCA40;
+
+
 }
 
 /* other */

@@ -17,50 +17,109 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
 
-
-    <!----- GOOGLE SIGN-IN API CLIENT ----->
-    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
-
-    <!----- JAVASCRIPT ----->
-    <!--delete cookies upon refresh-->
-    <script>
-      function deleteAllCookies() {
-          var cookies = document.cookie.split(";");
-          for (var i = 0; i < cookies.length; i++) {
-              var cookie = cookies[i];
-              var eqPos = cookie.indexOf("=");
-              var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-              document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
-          }
+    <!-- RESPONSIVE MEDIA DESIGN -->
+    <style type="text/css">
+      @media screen and (max-width: 800px){
+        #headingDivLogIn {
+          top: 32%;
+          position: fixed;
+          margin:0;
+          padding:0;
+          width: 100%;
+        }
+        #title{
+          font-size: 60px;
+          line-height: 100%;
+        }
+        #tagline{
+          line-height: 90%;
+          font-size: 15px;
+        }
+        #loginMenu {
+          position: fixed;
+          top: 40%;
+        }
+        #submitButton {
+          display: inline-block;
+          align-items: center;
+          justify-content: center;
+          width: 80%;
+        }
+        #googleLogIn {
+          top: 85%;
+          margin: 0.25%;
+        }
       }
-    </script>
+    </style>
+
+    <!----- GOOGLE SIGN-IN API CLIENT LIBRARY ----->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 
   </head>
 
   <body onload="deleteAllCookies()">
 
     <!-- HEADING -->
-    <div id="headingDiv">
-      <h1 id="title">FLUSHR</h1>
-      <h2 id="tagline">this is the sh*t</h2>
+    <div id="headingDivLogIn">
+      <h1 id="title">LOG IN</h1>
+      <!-- GO BACK / CONTINUE AS GUEST -->
+      <h2 id="tagline">don't have an account? go back <a href=landing.html>here</a>.</h2>
     </div>
 
-    <!-- GOOGLE SIGN-IN BUTTON -->
-    <div id="my-signin2"></div>
 
-    <div id="googleLogIn" class="row">
-      <div class="col-md-3">
-        <a class="btn btn-outline-dark" href="/users/googleauth" role="button" style="text-transform:none">
-          <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"/>
-          Login with Google
-        </a>
+    <!-- MANUAL LOG-IN -->
+    <div id="loginMenu" class="container">
+
+      <form action="login.html" method="POST">
+
+        <!-- Username -->  
+        <div class="form-group row justify-content-center">
+          <label for="username-id" class="loginText col-sm-12 text-center form-label-style">Username: <span class="text-danger">*</span></label>
+          <div class="col-sm-12 col-md-8 col-lg-6">
+            <input type="text" class="form-control" id="username-id" name="username">
+                              <h3 id="username-error" class="invalid-feedback">Username is required.</h3>
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group row justify-content-center">
+          <label for="password-id" class="loginText col-sm-12 text-center form-label-style">Password: <span class="text-danger">*</span></label>
+          <div class="col-sm-12 col-md-8 col-lg-6">
+            <input type="password" class="form-control" id="password-id" name="password">
+                              <h3 id="password-error" class="invalid-feedback">Password is required.</h3>
+          </div>
+        </div>
+
+        <!-- Required Text -->
+        <div class="row justify-content-center">
+          <div class="col-sm-12 col-md-8 col-lg-6">
+            <span class="text-danger font-italic">Required *</span>
+          </div>
+        </div>
+        
+        <!-- Log-In Button -->
+        <div class="row justify-content-center">
+          <button id="submitButton" type="submit" class="btn btn-outline-dark btn-lg">LOG IN</button>
+        </div>
+      </form>
+
+    </div>
+
+    <div id="padding"></div>
+
+
+    <!-- GOOGLE LOG-IN BUTTON -->
+    <div id="my-signin2">
+      <div id="googleLogIn" class="row">
+        <div class="col-md-3">
+          <a id="googleButton" class="btn btn-outline-dark" href="/users/googleauth" role="button" style="text-transform:none">
+            <img width="20px" style="margin-bottom:0px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"/>LOGIN WITH GOOGLE
+          </a>
+        </div>
       </div>
     </div>
-      
-
-    <!-- google client library to integrate google sign-in api -->
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-
     
+      
+  
   </body>
 </html>
