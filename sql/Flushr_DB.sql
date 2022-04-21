@@ -21,23 +21,23 @@ CREATE TABLE Rating(
     wait_time INT,
 
     PRIMARY KEY(rating_id),
-    FOREIGN KEY (bathroom_id) REFERENCES  Bathroom(bathroom_id)
+    FOREIGN KEY (bathroom_id) REFERENCES Bathroom(bathroom_id)
 );
-
 
 CREATE TABLE User(
-	user_id VARCHAR(255) NOT NULL,
+	email VARCHAR(255) NOT NULL,
+	user_id INT NOT NULL UNIQUE AUTO_INCREMENT,
     name VARCHAR(255),
-    email VARCHAR(255),
     password VARCHAR(255),
     
-    PRIMARY KEY(user_id)
+    PRIMARY KEY(email)
 );
+
 
 -- bridge table
 CREATE TABLE bathroom_bookmarks(
     bathroom_id VARCHAR(255) NOT NULL,
-	user_id VARCHAR(255) NOT NULL,
+	user_id INT NOT NULL UNIQUE,
     
     FOREIGN KEY (user_id) REFERENCES User(user_id),
     FOREIGN KEY (bathroom_id) REFERENCES  Bathroom(bathroom_id)
