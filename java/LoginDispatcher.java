@@ -54,7 +54,7 @@ public class LoginDispatcher extends HttpServlet {
 	    		PrintWriter out = response.getWriter();
 	    		out.println("<span style='background-color:#ffcccb; width=100%;'>" + errorMessage + "</span>");
 	    		out.flush();
-	    		request.getRequestDispatcher("auth.jsp").include(request, response);
+	    		request.getRequestDispatcher("login.html").include(request, response);
 			}
 			
 		} catch (SQLException e) {
