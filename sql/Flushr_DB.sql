@@ -8,6 +8,7 @@ USE Flushr_DB;
 CREATE TABLE Bathroom(
     bathroom_id VARCHAR(255) NOT NULL,
     bathroom_location VARCHAR(255),
+    image_url VARCHAR(255),
 
     PRIMARY KEY(bathroom_id)
 );
