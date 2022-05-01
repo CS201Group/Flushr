@@ -14,7 +14,7 @@ CREATE TABLE Bathroom(
 );
 
 CREATE TABLE Rating(
-    rating_id VARCHAR(255) NOT NULL,
+    rating_id INT NOT NULL AUTO_INCREMENT,
     bathroom_id VARCHAR(255) NOT NULL,
     overall_rating INT,
     cleanliness INT,
