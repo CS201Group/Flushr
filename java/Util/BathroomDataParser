@@ -47,16 +47,14 @@ public class BathroomDataParser {
     		   // fill from json
     		   try {
     			   Gson gson = new Gson();
-    			   //Type businessListType = new TypeToken<ArrayList<Business>>(){}.getType();
-    			   //restaurants = gson.fromJson(new FileReader("restaurant_data.json"), businessListType);
     			   bathrooms = gson.fromJson(jsonStr, BathroomWrapper.class);
     			   
     			   
     			   for(Bathroom bathroom : bathrooms.getBathrooms()) {
     				   
-    				   String rating = "INSERT INTO rating_details VALUES ('" 
-   	    					+ i + "', " + restaurant.getReviewCount() + ", " + 
-   	    					restaurant.getRating() + ")";
+    				   String rating = "INSERT INTO Rating VALUES ('" 
+   	    					+ bathroom.getBathroomId() + "', '" + 
+   	    					bathroom.getOverallRating() + "'" +  ")";
 	   				   PreparedStatement stmt2 = conn.prepareStatement(rating);
 	   				   stmt2.executeUpdate();
     				   
