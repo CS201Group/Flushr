@@ -46,7 +46,7 @@ public class RegisterDispatcher extends HttpServlet {
     	String password = request.getParameter("password");
     	
     	if (email.contentEquals("") || password.contentEquals("")) {
-    		errorMessage = "Please enter a username and password."
+    		errorMessage = "Please enter a username and password.";
     	}
     	
     	// check sql stuff to see if user is already registered

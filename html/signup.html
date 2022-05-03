@@ -98,7 +98,8 @@
               document.getElementById("validateSignup").innerHTML = this.responseText;
             }
           }
-          
+          document.cookie="username=" + document.signupform.username.value
+          window.location = "mainFeed.html";
         }
         xhttp.send();	
         return false;

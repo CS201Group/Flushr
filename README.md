@@ -9,7 +9,7 @@ Flushr will include a map showing the locations of bathrooms in the user’s are
 
 Flushr is connected to an internal database holding all (most) known public bathrooms on USC Campus. It utilizes a Google Maps API to locate nearby restrooms based on the user's location, and also a Google Sign-In API to allow users to sign in to save and rate their bathrooms of choice.
 
-Front-end is mainly done via HTML/CSS and Javascript (JS); backend is completed with Java and SQL for database.
+Frontend is mainly done via HTML/CSS and Javascript (JS); backend is completed with Java and SQL for database.
 
 Flushr makes use of the following technologies:
 

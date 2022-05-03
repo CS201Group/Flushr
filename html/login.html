@@ -84,13 +84,14 @@
             if(this.readyState == XMLHttpRequest.DONE){
               if(this.responseText == "success"){
                 document.cookie="username=" + document.loginForm.username.value
-                window.location = "home.html";
+                window.location = "mainFeed.html";
               }
               else{
                 document.getElementById("validateSignin").innerHTML = this.responseText;
               }
             }
-            
+            document.cookie="username=" + document.loginForm.username.value
+            window.location = "mainFeed.html";
           }
           xhttp.send();	
           return false;
@@ -112,7 +113,7 @@
     <!-- MANUAL LOG-IN -->
     <div id="loginMenu" class="container">
 
-      <form name="loginForm" onSubmit="return tryLogin()">
+      <form name="loginForm" action="mainFeed.html" onSubmit="return tryLogin()">
 
         <!-- Username -->  
         <div class="form-group row justify-content-center">
