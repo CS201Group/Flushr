@@ -66,6 +66,45 @@
       }
     </style>
 
+    <!-- JAVASCRIPT CONNECT TO SERVLETS -->
+    <script>
+      function deleteAllCookies() {
+          var cookies = document.cookie.split(";");
+    
+          for (var i = 0; i < cookies.length; i++) {
+              var cookie = cookies[i];
+              var eqPos = cookie.indexOf("=");
+              var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+              document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+          }
+      }
+    </script>
+    <script>
+      function trySignup(){
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "signup?signupEmail="+document.signupform.email.value + 
+            "&signupUsername=" + document.signupform.username.value + 
+            "&signupPassword=" + document.signupform.password.value);
+        
+        xhttp.onreadystatechange = function(){
+          
+          if(this.readyState == XMLHttpRequest.DONE){
+            
+            if(this.responseText == "success"){
+              document.cookie="username=" + document.signupform.username.value
+              window.location = "mainFeed.html";
+            }
+            else{
+              document.getElementById("validateSignup").innerHTML = this.responseText;
+            }
+          }
+          
+        }
+        xhttp.send();	
+        return false;
+      }
+    </script>
+
   </head>
   <body>
       <div id="headingDiv">
@@ -73,10 +112,10 @@
         <h2 id="tagline">don't wanna sign up? continue without an account <a href="main.html">here</a>.</h2>
       </div>
       
-      <!-- MANUAL SIGN-IN -->
+    <!-- MANUAL SIGN-IN -->
     <div id="loginMenu" class="container">
 
-      <form action="signup.html" method="POST">
+      <form name="signupform" onSubmit="return trySignup()">
 
         <!-- Email -->  
         <div class="form-group row justify-content-center">
@@ -112,7 +151,7 @@
           </div>
         </div>
         
-        <!-- Log-In Button -->
+        <!-- Signup Button -->
         <div class="row justify-content-center">
           <button id="submitButton" type="submit" class="btn btn-outline-dark btn-lg">SIGN UP</button>
         </div>
