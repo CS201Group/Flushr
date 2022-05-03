@@ -11,30 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class Helper {
-    /**
-     * check if name is valid
-     *
-     * @param name the name user provides
-     * @return valid or not valid
-     */
-    public static boolean validName(String name) {
-        return true;
-    }
 
-    /**
-     * check if email is valid
-     *
-     * @param email the email user provides
-     * @return valid or not valid
-     */
-    public static boolean isValidEmail(String email) {
-        if (email == null) {
-            return false;
-        }
-        if (email.contains("@")) {
-        	return true;
-        }
-    }
+    
 
     /**
      * Get username with the email
@@ -77,18 +55,14 @@ public class Helper {
         return 0;
     }
 
-    public static void registerUser(String email, String name, String password) throws SQLException {
+    public static void registerUser(String email, String password) throws SQLException {
 	    	try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Flushr_DB", "root", "root")) {
 	    		//Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/saleatsdb", "root", "root");
 	    		//conn.createStatement();
 	    		//String sql = "INSERT INTO users VALUES (?,?,?)";
-	    		String sql = "INSERT INTO users VALUES " + "(" + "'" + email + "'" + ", '" + name + "', '" + password + "')";
+	    		String sql = "INSERT INTO users VALUES " + "(" + "'" + email + "'" + ", '" + password + "')";
 	    		PreparedStatement stmt = conn.prepareStatement(sql);
-	    		/*
-	    		stmt.setString(1, email);
-	            stmt.setString(2, name);
-	            stmt.setString(3, password);
-	            */
+	    		
 	    		stmt.executeUpdate(sql);
 	    	}
 	    	catch(SQLException e) {

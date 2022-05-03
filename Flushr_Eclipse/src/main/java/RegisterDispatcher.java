@@ -40,21 +40,13 @@ public class RegisterDispatcher extends HttpServlet {
         //TODO
     	String errorMessage = "";
     	
-    	String name = request.getParameter("name");
-    	
-    	if (!Helper.validName(name)) {
-    		errorMessage += "Invalid name. ";
-    	}
     	
     	String email = request.getParameter("email");
-    	if (!Helper.isValidEmail(email)) {
-    		errorMessage += "Invalid email. ";
-    	}
-    	String password = request.getParameter("password");
-    	String cpassword = request.getParameter("cpassword");
     	
-    	if (!(password.contentEquals(cpassword))){
-    		errorMessage += "Passwords must match. ";
+    	String password = request.getParameter("password");
+    	
+    	if (email.contentEquals("") || password.contentEquals("")) {
+    		errorMessage = "Please enter a username and password."
     	}
     	
     	// check sql stuff to see if user is already registered
@@ -66,15 +58,11 @@ public class RegisterDispatcher extends HttpServlet {
 					response.setContentType("text/html");
 		    		PrintWriter out = response.getWriter();
 		    		out.println("<span style='background-color:#ffcccb; width=100%;'>" + errorMessage + "</span>");
-		    		request.getRequestDispatcher("login.html").include(request, response);
+		    		request.getRequestDispatcher("signup.html").include(request, response);
 				}
 				else {
 					// register the user
-					Helper.registerUser(email, name, password);
-					Cookie cookie = new Cookie("name", name);
-					response.setContentType("text/html");
-					response.addCookie(cookie);
-					request.getSession().setAttribute("loggedInUser", name);
+					Helper.registerUser(email, password);
 					response.sendRedirect("main.html");
 					//request.getRequestDispatcher("index.jsp").forward(request, response);
 				}
@@ -96,7 +84,7 @@ public class RegisterDispatcher extends HttpServlet {
     		response.setContentType("text/html");
     		PrintWriter out = response.getWriter();
     		out.println("<span style='background-color:#ffcccb; width=100%;'>" + errorMessage + "</span>");
-    		request.getRequestDispatcher("login.html").include(request, response);
+    		request.getRequestDispatcher("signup.html").include(request, response);
     	}
     	
     }
