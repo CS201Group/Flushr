@@ -9,19 +9,61 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/adade898d1.js" crossorigin="anonymous"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div id="mainHeaderDiv">
-      <div id="logo">
-        <p1 id="headerTitle">FLUSHR.</p1>
-        
+    <form>
+      <div id="mainHeaderDiv">
+        <div id="logo">
+          <p1 id="headerTitle">FLUSHR.</p1>
+          
+        </div>
+        <div id="menuButtons">
+            <button class="menuButton">saved</button>
+            <button class="menuButton active">search</button>
+            <button class="menuButton">profile</button>
+        </div>
       </div>
-      <div id="menuButtons">
-          <button class="menuButton">saved</button>
-          <button class="menuButton active">search</button>
-          <button class="menuButton">profile</button>
+      
+      <div id="detailsPortion">
+        <div id="brPlaceholder">
+          <img>
+        </div>
+  
+        <div id="rightHalfRatings">
+          <div id="ratingRow1">
+            <p class="brTitle" style="margin-left: -270px">Marshall School of Business (JFF)</p>
+            <div id="ratingSubRow1">
+              <p id="feedStars">4.7 stars</p>
+              <div>
+                <i class="fa-solid fa-paper-plane"></i>
+                <p class="resultDist">0.1 mi</p>
+              </div>
+            </div>
+          </div>
+  
+          <div id="ratingRow2">
+            <p class="resultText" >Cleanliness: 4.52/5</p>
+            <p class="resultText" style="margin-top: -6px;">Availability: 1 min </p>
+            <p class="resultText" style="margin-top: -6px;">Accessability: 4.89/5</p>
+          </div>
+        </div>
       </div>
-  </div>
+  
+      <div id="ratingsReviews">
+         <div id="ratingRow3">
+          <p id="ratingTitle">Ratings & Reviews</p>
+          <button id="reviewButton">write a review...</button>
+        </div>
+
+        <div id="placeHolderReview"></div>
+        <div id="placeHolderReview"></div>
+
+      </div> 
+    </form>
+    
+
   </body>
 </html>

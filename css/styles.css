@@ -533,7 +533,7 @@ p {
     /* margin-top: -10px;
     margin-right: -10px;
     margin-left: -10px; */
-    width: 100%;
+    /* width: 100%; */
     padding-top: 20px;
     /* height: 325px;
     background: #CB743F; */
@@ -752,5 +752,100 @@ p {
     padding-left: 25%;
 }
 
+#brPlaceholder{
+    width: 720px;
+    height: 461px;
+    /* left: 52px;
+    top: 133px; */
+
+    background: #FDCA40;
+}
+
+#detailsPortion{
+    padding-left: 40px;
+    display: flex;
+    flex-direction: row;
+    /* width: 100%; */
+    /* background-color: black; */
+}
+
+#rightHalfRatings{
+    
+}
+
+#ratingRow1{
+    /* background-color: black; */
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#ratingSubRow1{
+    display: flex;
+    justify-content: space-between;
+    /* background-color: black; */
+    margin-top: -30px;
+    width: 644px;
+}
+
+#ratingRow2{
+    display: flex;
+    flex-direction: column;
+    /* margin-top: -20px; */
+    margin-left: 20px;
+}
+
+#ratingsReviews{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#placeHolderReview{
+    width: 1329px;
+    height: 150px;
+    /* left: 52px;
+    top: 686px; */
+    margin-top: 20px;
+    background: #CB743F;
+}
+
+#ratingRow3{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 40px;
+    margin-left: 100px;
+    margin-right: 120px;
+    /* background-color: white; */
+}
+
+#ratingTitle{
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 38px;
+
+    color: #2176FF;
+    padding-left: 50px;
+
+}
+
+#reviewButton{
+    background: none;
+    border: none;
+
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 27px;
+
+    padding-right: 10px;
+
+    color: #31393C;
+}
 
 /* other */
