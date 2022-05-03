@@ -42,7 +42,7 @@
             <p id="profileText1">Preferences</p>
           </div>
           <div id="box">
-            <p id="profileText1">?</p>
+            <p id="profileText1">Map</p>
           </div>
         </div>
 
@@ -51,7 +51,7 @@
             <p id="profileText1">Settings</p>
           </div>
           <div id="box">
-            <p id="profileText1">Log Out</p>
+            <p id="profileText1"><a href="landing.html" onclick="signOut();">Log Out</a></p>
           </div>
         </div>
       </div>
@@ -59,4 +59,14 @@
     </div>
 
   </body>
+
+  <script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+  </script>
+
 </html>
