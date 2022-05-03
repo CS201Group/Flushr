@@ -14,18 +14,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
   </head>
   <body>
+    <!-- Header -->
     <div class="headerBar">
-        <div id="logo">
+        <div id="logo" onclick="location.href='main.jsp'">
             <h1 id="headerTitle">FLUSHR.</h1>
         </div>
         <div id="menuButtons">
-            <button class="menuButton active">saved</button>
-            <button class="menuButton">search</button>
-            <button class="menuButton">profile</button>
+          <button class="menuButton active" onclick="location.href='saved.jsp'">saved</button>
+          <button class="menuButton" onclick="location.href='main.jsp'">search</button>
+          <button class="menuButton" onclick="location.href='profile.jsp'">profile</button>
         </div>
       </div> 
       
       <form>
+        <!-- Saved section -->
         <div id="placeholder1">
           <div id="placeHolderImgFeed"></div>
 

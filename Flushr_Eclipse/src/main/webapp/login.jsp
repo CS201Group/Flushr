@@ -72,7 +72,7 @@
     <!-- MANUAL LOG-IN -->
     <div id="loginMenu" class="container">
 
-      <form action="login.html" method="POST">
+      <form action="login.jsp" method="POST">
 
         <!-- Username -->  
         <div class="form-group row justify-content-center">
@@ -125,3 +125,89 @@
   
   </body>
 </html>
+
+
+
+<script>
+function confPwd() {
+	var pw1 = document.getElementById("registerPW").value;
+	//debug: alert(pw1);
+	var pw2 = document.getElementById("registerPWC").value;
+	//debug: alert(pw2);
+	if (pw1 != pw2) {
+		alert("Passwords do not match.");
+		return false;
+	}
+	var tAC = document.getElementById("termsAndConditions").checked;
+	if (!tAC) {
+		alert("Please agree to Terms and Conditions to continue registration.");
+		return false;
+	}
+	return true;
+}
+
+var googleUser = {};
+var startApp = function() {
+	gapi
+			.load(
+					'auth2',
+					function() {
+						// Retrieve the singleton for the GoogleAuth library and set up the client.
+						auth2 = gapi.auth2
+								.init({
+									client_id : '283359501208-9hlna4chq4c91v3mq37k04461tjd7djl.apps.googleusercontent.com',
+									cookiepolicy : 'single_host_origin',
+
+								});
+						attachSignin(document.getElementById('customBtn'));
+					});
+
+};
+
+function attachSignin(element) {
+	console.log(element.id);
+	auth2.attachClickHandler(
+					element,
+					{},
+					function(googleUser) {
+						
+						document.cookie = "username="
+								+ googleUser.getBasicProfile().getName()
+										.split(" ")[0];
+						var url = "http://localhost:8080/csci201_assignment2_aadeshbajaj/GoogleDispatcher?"
+								+ "google="
+								+ encodeURIComponent("yes")
+								+ "&name-register="
+								+ encodeURIComponent(googleUser.getBasicProfile().getName())
+								+ "&email-register="
+								+ encodeURIComponent(googleUser.getBasicProfile().getEmail())
+								+ "&password-register=&confirm-password-register=&terms-checkbox=on";
+						window.location.replace(url);
+					}, function(error) {
+						alert(JSON.stringify(error, undefined, 2));
+					});
+}
+</script>
+
+
+<% 
+	String errorMessage = (String) request.getAttribute("errorMessage");
+	if (errorMessage != "good" && errorMessage != "" && errorMessage != null) {
+		out.println(
+		"<div style = 'margin-bottom: 5px; padding:20px 0; text-align:center; background-color:#fdcddc; width=100%;'>"
+				+ errorMessage + "</div>");
+	} else {
+		errorMessage = "";
+	}
+%>
+
+<!-- LoginForm
+form name="loginForm" id="loginForm" method="post" class="loginForm"
+input type="email" id="loginEmail" name="loginEmail" required 
+input type="password" id="loginPassword" name="loginPassword" required 
+input type="submit" id="regularSignIn" value="&#xf090 Sign In" class="fa-input fa-sign-in" 
+formaction="LoginDispatcher"
+div id="gSignInWrapper" onclick="startApp">]
+div id="customBtn" class="customGPlusSignIn"
+i id="customIcon" class="fa fa-google icon-large" style="color: white; text-align: center;"
+script: startApp(); -->

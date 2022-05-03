@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,21 +17,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
   </head>
   <body>
+      <!-- Header -->
     <div id="mainHeaderDiv">
-        <div id="logo">
+        <div id="logo" onclick="location.href='main.jsp'">
           <p1 id="headerTitle">FLUSHR.</p1>
-          
         </div>
+        
         <div id="menuButtons">
-            <button class="menuButton">saved</button>
-            <button class="menuButton active">search</button>
-            <button class="menuButton">profile</button>
+            <button class="menuButton" onclick="location.href='saved.jsp'">saved</button>
+            <button class="menuButton active" onclick="location.href='main.jsp'">search</button>
+            <button class="menuButton" onclick="location.href='profile.jsp'">profile</button>
         </div>
     </div>
+
+
       <form>
         <div id="mapDiv">
             <a id="map"></a>
 
+            <!-- Search button -->
             <div class="yellowButton" style="margin-top: 1.5%;">
                 <div id="mainSearchDiv">
                     <button id="feedSearchButton" style="background-color: #FDCA40;"> 
@@ -42,6 +45,7 @@
                 </div>
             </div>
             
+            <!-- Sort by buttons -->
             <div id="sortDiv">
                 <input list="sortCriteria" id="sortList" class="yellowButton" placeholder="Sort by...">
                 <datalist id="sortCriteria">
@@ -59,10 +63,12 @@
                 </datalist>
             </div>
 
+            <!-- Results section -->
             <div id="resultsDiv" >
                 <p id="resultsTitle" class="blueTitle">We found the best bathrooms for you.</p>
             </div>
 
+            <!-- Results data -->
             <div id="resultsData">
                 <div>
                     <p class="resultText">Ronald Tutor Hall (RTC)</p>
@@ -87,3 +93,4 @@
       
   </body>
 </html>
+	

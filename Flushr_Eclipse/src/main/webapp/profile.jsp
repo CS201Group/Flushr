@@ -16,18 +16,63 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
   </head>
   <body>
-    <header>
-        <div id="logo">
-            <h1 id="headerTitle">FLUSHR.</h1>
-        </div>
-        <div id="menuButtons">
-            <button class="menuButton">saved</button>
-            <button class="menuButton">search</button>
-            <button class="menuButton active">profile</button>
-        </div>
-      </header>
+    <!-- Header  -->
+    <div id="mainHeaderDiv">
+      <div id="logo" onclick="location.href='main.jsp'">
+        <p1 id="headerTitle">FLUSHR.</p1>
+        
+      </div>
+      <div id="menuButtons">
+        <button class="menuButton" onclick="location.href='saved.jsp'">saved</button>
+        <button class="menuButton" onclick="location.href='main.jsp'">search</button>
+        <button class="menuButton active" onclick="location.href='profile.jsp'">profile</button>
+      </div>
+    </div>
+    
+    <div id="profileBackground" >
+      <!-- Profile picture -->
+      <div id="pfp">
+        <img id="Profile Pic">  
+      </div>
       
-      <div></div>
+      <!-- Greeting -->
+      <div>
+        <p id="profileText1">Hi, Tommy Trojan!</p>
+        <p id="profileText2">We hope you had a good day today.</p>
+      </div>
+
+      <!-- Boxes section -->
+      <div id="boxContainer">
+        <div id="row">
+          <div id="box">
+            <p id="profileText1">Preferences</p>
+          </div>
+          <div id="box">
+            <p id="profileText1">Map</p>
+          </div>
+        </div>
+
+        <div id="row">
+          <div id="box">
+            <p id="profileText1">Settings</p>
+          </div>
+          <div id="box">
+            <p id="profileText1"><a href="landing.html" onclick="signOut();">Log Out</a></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
 
   </body>
+
+  <script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+  </script>
+
 </html>

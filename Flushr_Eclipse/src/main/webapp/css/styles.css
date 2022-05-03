@@ -33,13 +33,9 @@ p {
     font-style: normal;
     font-weight: 800;
     font-size: 1.75rem;
-    /* line-height: 38px; */
-    /* display: inline-flex;
-    text-align: center; */
     background: none;
     border: none;
     color: #31393C;
-    /* margin-left: 5%; */
     width: 110px;
     display: flex;
     justify-content: space-between;
@@ -139,7 +135,6 @@ p {
 }
 
 .brTitle{
-    /* position: relative; */
     left: 40px;
 
     font-family: 'Nunito';
@@ -160,7 +155,6 @@ p {
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
-    /* background-color: yellow; */
     padding: none;
     margin: none;
 }
@@ -171,7 +165,6 @@ p {
     flex-direction: row;
     justify-content: space-between;
     margin-top: -20px;
-    /* background-color: black; */
 }
 
 .feedDescription{
@@ -183,15 +176,8 @@ p {
 }
 
 .feedWait{
-    /* display: flex;
-    align-items: center; */
-    /* justify-content: space-between; */
-    /* width: 300px; */
     font-family: 'Montserrat';
     font-style: normal;
-    /* font-weight: 500; */
-    /* font-size: 10px; */
-    /* line-height: 17px; */
     display: flex;
     align-items: flex-start;
     text-align: right;
@@ -314,37 +300,27 @@ p {
 }
 
 #headerTitle {
-    /* position: relative; */
     padding-left: 20px;
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 800;
     font-size: 2.5rem;
-    /* line-height: 49px; */
-    /* display: flex;
-    align-items: center; */
     background-color: none;
     margin-top: 0px;
 }
 
 #slogan{
-    /* position: absolute; */
     padding-left: 20px;
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 800;
     font-size: 1.8rem;
-    /* line-height: 130px; */
     display: flex;
     align-items: center;
     background-color: none;
 }
 
 #menuButtons {
-    /* position: absolute; */
-    /* right: 3%;
-    top: 4%;
-    width: 23rem; */
     display: flex;
     justify-content: space-between;
 }
@@ -502,13 +478,6 @@ p {
 #headerDiv{
     position: relative;
     width: 100%;
-    /* height: 325px; */
-    /* left: 0px;
-    top: 0px; */
-    /* margin-top: -10px;
-    margin-right: -10px;
-    margin-left: -10px; */
-    width: 100%;
     padding-top: 20px;
     height: 325px;
     background: #CB743F;
@@ -520,30 +489,19 @@ p {
 #mainDescriptionDiv{
     display: flex;
     justify-content: space-between;
-    /* background-color: black; */
     width: 170px;
 }
 
 #mainHeaderDiv{
     position: relative;
     width: 100%;
-    /* height: 325px; */
-    /* left: 0px;
-    top: 0px; */
-    /* margin-top: -10px;
-    margin-right: -10px;
-    margin-left: -10px; */
-    width: 100%;
     padding-top: 20px;
-    /* height: 325px;
-    background: #CB743F; */
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
 
 #searchDiv{
-    /* position: absolute; */
     width: 1021px;
     height: 99px;
 
@@ -571,8 +529,6 @@ p {
     border: none;
     align-items: center;
     margin-right: 1%;    
-    /* height: 3rem;
-    background: #FFEEBE; */
     height: 2em;
     padding-left: 4%;
     background: #FDCA40;
@@ -589,44 +545,27 @@ p {
 }
 
 #feedSubHeader{
-    /* position: absolute; */
-
-    /* height: 30px; */
-    /* left: 3%;
-    top: 400px; */
-
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 800;
     font-size: 24px;
-    /* line-height: 33px; */
     text-align: left;
     color: #31393C;
 }
 
 #feedSubHeader2{
-    /* position: absolute; */
-
-    /* height: 27px;
-    left: 3%;
-    top: 440px; */
-
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
-    /* line-height: 17px; */
     text-align: left;
     margin-top: -14px;
     color: #31393C;
 }
 
 #placeHolderImgFeed{
-    /* position: relative; */
     width: 1340px;
     height: 286px;
-    /* left: 3%;
-    top: 511px; */
     margin-left: 40px;
     background: #FDCA40;
 }
@@ -634,15 +573,12 @@ p {
 #logo{
     white-space: nowrap;
     padding-left: 20px;
-    /* background-color: yellow; */
-
 }
 
 #mainSearchDiv{
     display: flex;
     align-items: center;
     padding-top: 8px;
-    /* background-color: black; */
 }
 
 #feedForm{
@@ -651,7 +587,6 @@ p {
 }
 
 #feedDisplayHeader{
-    /* background-color: black; */
     margin-top: 50px;
     text-align: left;
     padding-left: 40px;
@@ -662,13 +597,166 @@ p {
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
-    /* line-height: 22px; */
     display: flex;
     align-items: center;
 
     color: #FDCA40;
 
 
+}
+
+#profileBackground{
+    height: 100%;
+    margin-top: 10%;
+    background: #FDCA40;
+    border-radius: 550px 550px 0px 0px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#pfp{
+    width: 350px;
+    height: 350px;
+
+    background: #33A1FD;
+    border-radius: 1000px;
+    margin-top: -10%;
+
+    /* POOR BUG FIX */
+    margin-left: 38%;
+}
+
+#profileText1{
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 38px;
+    align-items: center;
+    text-align: center;
+
+    color: #31393C;
+}
+
+#profileText2{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    align-items: center;
+    text-align: center;
+
+    color: #31393C;
+}
+
+#box{
+    width: 344px;
+    height: 122px;
+
+    background: #CB743F;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+}
+
+#row{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5%;
+}
+
+#boxContainer{
+    padding-top: 20px;
+    width: 50%;
+    padding-left: 25%;
+}
+
+#brPlaceholder{
+    width: 720px;
+    height: 461px;
+
+    background: #FDCA40;
+}
+
+#detailsPortion{
+    padding-left: 40px;
+    display: flex;
+    flex-direction: row;
+}
+
+#rightHalfRatings{
+    
+}
+
+#ratingRow1{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#ratingSubRow1{
+    display: flex;
+    justify-content: space-between;
+    margin-top: -30px;
+    width: 644px;
+}
+
+#ratingRow2{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+#ratingsReviews{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#placeHolderReview{
+    width: 1329px;
+    height: 150px;
+    margin-top: 20px;
+    background: #CB743F;
+}
+
+#ratingRow3{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 40px;
+    margin-left: 100px;
+    margin-right: 120px;
+}
+
+#ratingTitle{
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 38px;
+
+    color: #2176FF;
+    padding-left: 50px;
+
+}
+
+#reviewButton{
+    background: none;
+    border: none;
+
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 27px;
+
+    padding-right: 10px;
+
+    color: #31393C;
 }
 
 /* other */
