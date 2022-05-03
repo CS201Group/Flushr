@@ -59,6 +59,44 @@
     <!----- GOOGLE SIGN-IN API CLIENT LIBRARY ----->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 
+    <!-- JAVASCRIPT CONNECT TO SERVLETS -->
+    <script>
+      function deleteAllCookies() {
+          var cookies = document.cookie.split(";");
+    
+          for (var i = 0; i < cookies.length; i++) {
+              var cookie = cookies[i];
+              var eqPos = cookie.indexOf("=");
+              var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+              document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+          }
+      }
+      </script>
+      <script>
+        function tryLogin(){
+          var xhttp = new XMLHttpRequest();
+          xhttp.open("GET", "login?loginUsername=" + document.loginForm.username.value + 
+              "&loginPassword=" + document.loginForm.password.value,
+              true);
+          
+          xhttp.onreadystatechange = function(){
+            
+            if(this.readyState == XMLHttpRequest.DONE){
+              if(this.responseText == "success"){
+                document.cookie="username=" + document.loginForm.username.value
+                window.location = "home.html";
+              }
+              else{
+                document.getElementById("validateSignin").innerHTML = this.responseText;
+              }
+            }
+            
+          }
+          xhttp.send();	
+          return false;
+        }
+      </script>
+
   </head>
 
   <body onload="deleteAllCookies()">
@@ -74,7 +112,7 @@
     <!-- MANUAL LOG-IN -->
     <div id="loginMenu" class="container">
 
-      <form action="login.html" method="POST">
+      <form name="loginForm" onSubmit="return tryLogin()">
 
         <!-- Username -->  
         <div class="form-group row justify-content-center">
