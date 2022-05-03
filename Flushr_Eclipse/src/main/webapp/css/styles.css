@@ -395,7 +395,7 @@ p {
 }
 
 /* main feed */
-#mapDiv {
+/* #mapDiv {
     position: absolute;
     top: 14%;
     left: 7.5%;
@@ -408,7 +408,7 @@ p {
     height: 25rem;
     
     background: #CB743F;
-}
+} */
 
 #searchBarDiv {
     margin-top: 1.5%;
