@@ -38,7 +38,7 @@
   {
     "bathroom_id": "USC Village",
     "bathroom_location": "3301 S Hoover St, Los Angeles, CA 90007",
-    "overall_rating": 3.9,
+    "overall_rating: 3.9,
     "cleanliness": 4,
     "accessibility": 5,
     "wait_time": 3,
@@ -97,5 +97,50 @@
     "accessibility": 3.6,
     "wait_time": 0,
     "image": "https://i.imgur.com/ad6dahM.jpg"
+  },
+  {
+    "bathroom_id": "Ronald Tutor Hall (RTH)",
+    "bathroom_location": "3710 McClintock Ave, Los Angeles, CA 90089",
+    "overall_rating": 5,
+    "cleanliness": 5,
+    "accessibility": 5,
+    "wait_time": 0,
+    "image": "https://i.imgur.com/O1fwhpe.jpg"
+  },
+  {
+    "bathroom_id": "Salvatori Computer Science Center (SAL)",
+    "bathroom_location": "941 Bloom Walk, Los Angeles, CA 90089",
+    "overall_rating": 4,
+    "cleanliness": 3,
+    "accessibility": 5,
+    "wait_time": 0,
+    "image": "https://i.imgur.com/cQvRQUj.jpg"
+  },
+  {
+    "bathroom_id": "Kaprielian Hall (KAP)",
+    "bathroom_location": "3620 S Vermont Ave, Los Angeles, CA 90089",
+    "overall_rating": 3.8,
+    "cleanliness": 4,
+    "accessibility": 3.5,
+    "wait_time": 0,
+    "image": "https://i.imgur.com/NqGMsmE.jpg"
+  },
+  {
+    "bathroom_id": "Hoffman Hall (HOH)",
+    "bathroom_location": "701 W Exposition Blvd, Los Angeles, CA 90089",
+    "overall_rating": 4.3,
+    "cleanliness": 5,
+    "accessibility": 3.5,
+    "wait_time": 0,
+    "image": "https://i.imgur.com/mR98yhA.jpg"
+  },
+  {
+    "bathroom_id": "Grace Ford Salvatori Hall (GFS)",
+    "bathroom_location": "900 W 36th St, Los Angeles, CA 90089",
+    "overall_rating": 4.7,
+    "cleanliness": 5,
+    "accessibility": 4.5,
+    "wait_time": 0,
+    "image": "https://i.imgur.com/27JLhC1.jpg"
   }
 ]

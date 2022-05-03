@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- GOOGLE AUTH CLIENT ID -->
+    <meta name="google-signin-client_id" content="954144613583-36alq6lv12r1d5dkesi2qqvhs99a33v0.apps.googleusercontent.com">
+
     <title>Login to Flushr.</title>
 
     <!----- BOOTSTRAP ----->
@@ -74,10 +78,10 @@
 
         <!-- Username -->  
         <div class="form-group row justify-content-center">
-          <label for="username-id" class="loginText col-sm-12 text-center form-label-style">Email: <span class="text-danger">*</span></label>
+          <label for="username-id" class="loginText col-sm-12 text-center form-label-style">Username: <span class="text-danger">*</span></label>
           <div class="col-sm-12 col-md-8 col-lg-6">
-            <input type="text" class="form-control" id="username-id" name="email">
-                              <h3 id="username-error" class="invalid-feedback">Email is required.</h3>
+            <input type="text" class="form-control" id="username-id" name="username">
+                              <h3 id="username-error" class="invalid-feedback">Username is required.</h3>
           </div>
         </div>
 
@@ -109,7 +113,7 @@
 
 
     <!-- GOOGLE LOG-IN BUTTON -->
-    <div id="my-signin2">
+    <div class="g-signin2" data-onsuccess="onSignIn">
       <div id="googleLogIn" class="row">
         <div class="col-md-3">
           <a id="googleButton" class="btn btn-outline-dark" href="/users/googleauth" role="button" style="text-transform:none">
@@ -119,7 +123,15 @@
       </div>
     </div>
     
-      
+    <script>
+      function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId()); // Do not send to backend! Use an ID token instead.
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+      }
+    </script>
   
   </body>
 </html>

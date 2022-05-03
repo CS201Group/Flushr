@@ -11,10 +11,22 @@ Flushr is connected to an internal database holding all (most) known public bath
 
 Front-end is mainly done via HTML/CSS and Javascript (JS); backend is completed with Java and SQL for database.
 
-It also makes use of AWS:
-- S3: to store bathroom data in a bucket to be pulled
-- Elastic Beanstalk: to deploy and host the server
-- Route 53: to get the domain name
+Flushr makes use of the following technologies:
+
+### Frontend
+- HTML/CSS
+- Bootstrap
+- Flexbox
+- Javascript
+- Figma, wireframe linked [here](https://www.figma.com/file/kstyWwt4RQy4uG8gSFI3HT/FLUSHR?node-id=0%3A1).
+
+### Backend
+- Java
+- MySQL
+- AWS
+
+### Miscellaneous
+- Github
 
 
 ## Who uses Flushr?
