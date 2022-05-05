@@ -6,20 +6,21 @@ USE Flushr_DB;
 
 
 CREATE TABLE Bathroom(
-    bathroom_id VARCHAR(255) NOT NULL,
+	bathroom_name VARCHAR(255) NOT NULL,
+    bathroom_id INT NOT NULL UNIQUE AUTO_INCREMENT,
     bathroom_location VARCHAR(255),
     image_url VARCHAR(255),
 
-    PRIMARY KEY(bathroom_id)
+    PRIMARY KEY(bathroom_name)
 );
 
 CREATE TABLE Rating(
     rating_id INT NOT NULL AUTO_INCREMENT,
-    bathroom_id VARCHAR(255) NOT NULL,
-    overall_rating INT,
-    cleanliness INT,
-    accessibility INT,
-    wait_time INT,
+    bathroom_id INT NOT NULL,
+    overall_rating DECIMAL(2,1),
+    cleanliness DECIMAL(2,1),
+    accessibility DECIMAL(2,1),
+    wait_time DECIMAL(2,1),
 
     PRIMARY KEY(rating_id),
     FOREIGN KEY (bathroom_id) REFERENCES Bathroom(bathroom_id)
@@ -37,7 +38,7 @@ CREATE TABLE User(
 
 -- bridge table
 CREATE TABLE bathroom_bookmarks(
-    bathroom_id VARCHAR(255) NOT NULL,
+    bathroom_id INT NOT NULL,
 	user_id INT NOT NULL UNIQUE,
     
     FOREIGN KEY (user_id) REFERENCES User(user_id),

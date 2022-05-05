@@ -1,145 +1,147 @@
-//package Util;
-//
-//
-//import com.google.gson.*;
-//
-//import java.io.File;
-//import java.io.FileNotFoundException;
-//import java.io.FileReader;
-//import java.lang.reflect.Type;
-//import java.sql.Connection;
-//import java.sql.DriverManager;
-//import java.sql.PreparedStatement;
-//import java.sql.ResultSet;
-//import java.sql.SQLException;
-//import java.util.ArrayList;
-//import java.util.Arrays;
-//import com.google.gson.Gson;
-//import com.google.gson.reflect.TypeToken;
-//
-///**
-// * A class that pretends to be the Yelp API
-// */
-//public class BathroomDataParser {
-//    private static Boolean ready = false;
-//    private static String json;
-//
-//    /**
-//     * Initializes the DB with json data
-//     *
-//     * @param responseString the json string
-//     * @throws ClassNotFoundException 
-//     */
-//    public static void Init(String jsonStr) throws ClassNotFoundException {
-//    	json = jsonStr;
-//        if (ready) {
-//            return;
-//        }
-//        Class.forName("com.mysql.jdbc.Driver");
-//        
-//       try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Flushr_DB", "root", "root")) {
-//    			
-//    	   PreparedStatement ps = conn.prepareStatement("SELECT * FROM bathroom");
-//    	   ResultSet rs = ps.executeQuery();
-//    	   BathroomWrapper bathrooms;
-//    	   
-//    	   if (!rs.next()) {
-//    		   // fill from json
-//    		   try {
-//    			   Gson gson = new Gson();
-//    			   bathrooms = gson.fromJson(jsonStr, BathroomWrapper.class);
-//    			   
-//    			   
-//    			   for(Bathroom bathroom : bathrooms.getBathrooms()) {
-//    				   
-//    				   String rating = "INSERT INTO Rating VALUES ('" 
-//   	    					+ bathroom.getBathroomId() + "', '" + 
-//   	    					bathroom.getOverallRating() + "'" +  ")";
-//	   				   PreparedStatement stmt2 = conn.prepareStatement(rating);
-//	   				   stmt2.executeUpdate();
-//    				   
-//	   				   String rest_details = "INSERT INTO restaurant_details VALUES ('" + 
-//	      				   i + "', '" + restaurant.getImageUrl() + "', '" + String.join(" ", restaurant.getLocation().getDisplayAddress()) + "', '"
-//	      				   + restaurant.getPhone() + "', '" + restaurant.getPrice() + "', '" + restaurant.getUrl() + "')";
-//	   				   PreparedStatement stmt3 = conn.prepareStatement(rest_details);
-//	   				   stmt3.executeUpdate();
-//	   				   
-//    				   String rest = "INSERT INTO restaurant VALUES ('" 
-//    					+ restaurant.getId() + "', '" + restaurant.getName().replace("'", "") + "', '" + 
-//    					i + "', '" + i + "')";
-//    				   PreparedStatement stmt1 = conn.prepareStatement(rest);
-//    				   stmt1.executeUpdate();
-//    				 
-//    			   }
-//    			   ready = true;
-//    		   }
-//    		   catch(SQLException e) {
-//    			   e.printStackTrace();
-//    		   }
-//    		   catch(Exception e) {
-//    			   e.printStackTrace();
-//    		   }
-//    	   }
-//    	   
-//       }
-//       catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        
-//        
-//    }
-//
-//    public static Bathroom getBathroom(String id) {
-//    	Bathroom ans = new Bathroom();
-//    	try{
-//    		Class.forName("com.mysql.jdbc.Driver");
-//    		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Flushr_DB", "root", "root");
-//            String rest_sql = "SELECT * FROM restaurant WHERE restaurant_id = '" + id + "'";
-//            PreparedStatement rest_st = conn.prepareStatement(rest_sql);
-//            ResultSet rest_rs = rest_st.executeQuery();
-//            if (rest_rs.next()) {
-//            	ans.setId(id);
-//            	ans.setName(rest_rs.getString("restaurant_name"));
-//            	String details_sql = "SELECT * FROM restaurant_details WHERE details_id = '" + rest_rs.getString("details_id") + "'";
-//                PreparedStatement details_st = conn.prepareStatement(details_sql);
-//                ResultSet details_rs = details_st.executeQuery();
-//                details_rs.next();
-//                ans.setImageUrl(details_rs.getString("image_url"));
-//                ans.setLocationString(details_rs.getString("address"));
-//                ans.setPhone(details_rs.getString("phone_no"));
-//                ans.setPrice(details_rs.getString("estimated_price"));
-//                ans.setUrl(details_rs.getString("yelp_url"));
-//                String ratings_sql = "SELECT * FROM rating_details WHERE rating_id = '" + rest_rs.getString("rating_id") + "'";
-//                PreparedStatement ratings_st = conn.prepareStatement(ratings_sql);
-//                ResultSet ratings_rs = ratings_st.executeQuery();
-//                ratings_rs.next();
-//                ans.setRating(ratings_rs.getDouble("rating"));
-//                ans.setReviewCount(ratings_rs.getInt("review_count"));
-//                String category_sql = "SELECT * FROM category WHERE restaurant_id = '" + id + "'";
-//                PreparedStatement category_st = conn.prepareStatement(category_sql);
-//                ResultSet category_rs = category_st.executeQuery();
-//                Category [] categories = new Category[5];
-//                for (int i = 0; i < 5 && category_rs.next(); i++) {
-//                	categories[i] = new Category();
-//                	categories[i].setTitle(category_rs.getString("category_name"));
-//                }
-//                ans.setCategories(categories);
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        //TODO return business based on id
-//        return ans;
-//    }
-//
-//    /**
-//     * @param keyWord    the search keyword
-//     * @param sort       the sort option (price, review count, rating)
-//     * @param searchType search in category or name
-//     * @return the list of business matching the criteria
-//     */
-//    public static ArrayList<Bathroom> getBathrooms(String keyWord, String sort, String searchType) {
-//        ArrayList<Bathroom> bathrooms = new ArrayList<Bathroom>();
+package Util;
+
+
+import com.google.gson.*;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.lang.reflect.Type;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import com.google.gson.reflect.TypeToken;
+
+/**
+ * A class that pretends to be the Yelp API
+ */
+public class BathroomDataParser {
+    private static Boolean ready = false;
+
+    /**
+     * Initializes the DB with json data
+     *
+     * @param responseString the json string
+     * @throws ClassNotFoundException 
+     */
+    public static void Init(String responseString) throws ClassNotFoundException {
+        if (ready) {
+            return;
+        }
+        try {
+            String url = "jdbc:mysql://localhost:3306/Flushr_DB?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            
+            //TODO check if you've done the initialization
+            try {
+            	Connection conn = DriverManager.getConnection(url, Constant.DBUserName, Constant.DBPassword);
+                // First read the json file, restaurant_data.json
+                Gson gson = new Gson();
+                try {
+        			// read in the JSON file, but catch appropriate exception if
+        			// the file can't be read or it has bad inputs
+                	 Bathroom[] mBathrooms = gson.fromJson(responseString, Bathroom[].class);
+                	  
+                	 String sql_bathroom = "INSERT INTO Bathroom (bathroom_name, bathroom_location, image_url) VALUES (?,?,?)";
+                	 String sql_rating = "INSERT INTO Rating (overall_rating, cleanliness, accessibility, wait_time, bathroom_id) VALUES (?,?,?,?,?)";
+                	 String sql_user = "INSERT INTO User (email, name, password) VALUES (?,?,?)";
+                	//String sql_bridge = "INSERT INTO bathroom_bookmarks (category_id, restaurant_id) VALUES (?,?)";
+                	 
+                     //TODO iterate the businessHelper array and insert every business into the DB
+                	 
+                     for(Bathroom bathroom : mBathrooms) {
+                    	 
+                    	 //Bathroom
+                    	 PreparedStatement ps = conn.prepareStatement(sql_bathroom, Statement.RETURN_GENERATED_KEYS);
+                    	 ps.setString(1, bathroom.getBathroomName());
+                    	 ps.setString(2, bathroom.getBathroomLocation());
+                    	 ps.setString(3, bathroom.getImage());
+                    	 ps.executeUpdate(); 
+                    	 
+
+                  	   	//Rating
+                  		PreparedStatement ps2 = conn.prepareStatement(sql_rating, Statement.RETURN_GENERATED_KEYS);
+                  	   	ps2.setDouble(1, bathroom.getRating());
+                  	   	ps2.setDouble(2, bathroom.getCleanliness());
+                  	   	ps2.setDouble(3, bathroom.getAccessibility());
+                  	   	ps2.setDouble(4, bathroom.getWaitTime());
+                  	   	
+	                   	ResultSet bathKey = ps.getGeneratedKeys();
+	                   	while(bathKey.next()){
+	                   		ps2.setString(5, bathKey.getString(1));
+	                   	}
+	                   	ps2.executeUpdate(); 
+                  	   	
+                  	   	
+//                  	   	//User
+//                  		PreparedStatement ps3 = conn.prepareStatement(sql_user, Statement.RETURN_GENERATED_KEYS);
+//                  	   	ps3.setString(1, bathroom.getRating());
+//                  	   	ps3.setDouble(2, bathroom.getCleanliness());
+//                  	   	ps3.setDouble(3, bathroom.getAccessibility());
+//                  	   	ps3.setDouble(3, bathroom.getWaitTime());
+//                  	   	ps3.executeUpdate(); 
+              	 
+              	 
+
+	                   	 
+
+//	                   	 
+//	                   	ResultSet ratingKey = ps2.getGeneratedKeys();
+//	                   	while(ratingKey.next()){
+//	                   		ps.setInt(4,ratingKey.getInt(1));
+//	                   	}
+//	                    
+//	                   	ps.executeUpdate();
+//                  	   	
+//                  	   	//Category
+//                  	   	for(Category category: restaurant.getCategories()) {
+//                  	   		PreparedStatement ps4 = conn.prepareStatement(sql4, Statement.RETURN_GENERATED_KEYS);
+//                  	   		ps4.setString(1, category.getTitle());
+//                  	   		ps4.executeUpdate(); 
+//                  	   		
+//                  	   		//Bridge Table
+//                  	   		PreparedStatement ps5 = conn.prepareStatement(sql5);
+//    	                   	ResultSet categoryKey = ps4.getGeneratedKeys();
+//    	                   	while(categoryKey.next()){
+//    	                   		ps5.setInt(1,categoryKey.getInt(1));
+//    	                   	}
+//    	                   	
+//    	                   	ps5.setString(2, restaurant.getId());
+//    	                   	ps5.executeUpdate();                
+//                  	   	}  
+//                     }
+        		} 
+                }
+        		catch (JsonSyntaxException e) {
+        			System.out.println(e.getMessage());
+        			System.out.println("The file " + Constant.FileName + " is not correctly formatted.\n");
+        		}
+            }
+            catch(SQLException ex) {
+            	System.out.println("SQLException: " + ex.getMessage());
+            }
+        } 
+        catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        ready = true;
+    
+    }
+
+    /**
+     * @param keyWord    the search keyword
+     * @param sort       the sort option (price, review count, rating)
+     * @param searchType search in category or name
+     * @return the list of business matching the criteria
+     */
+    public static ArrayList<Bathroom> getBathrooms(String keyWord, String sort, String searchType) {
+        ArrayList<Bathroom> bathrooms = new ArrayList<Bathroom>();
 //        try {
 //            Class.forName("com.mysql.jdbc.Driver");
 //            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Flushr_DB", "root", "root");
@@ -217,11 +219,12 @@
 //			e.printStackTrace();
 //		}
 //        return bathrooms;
-//
-//    }
-//}
-//
-////Code adapted from https://stackoverflow.com/questions/23070298/get-nested-json-object-with-gson-using-retrofit
+		return bathrooms;
+
+    }
+}
+
+//Code adapted from https://stackoverflow.com/questions/23070298/get-nested-json-object-with-gson-using-retrofit
 //class BathroomDeserializer implements JsonDeserializer<Business> {
 //    @Override
 //    public Bathroom deserialize(JsonElement je, Type type, JsonDeserializationContext jdc) throws JsonParseException {

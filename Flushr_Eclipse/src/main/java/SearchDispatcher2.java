@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.JsonParseException;
 
 import Util.Bathroom;
+import Util.BathroomDataParser;
 //import Util.BathroomDataParser;
+import Util.RestaurantDataParser;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -34,23 +36,26 @@ public class SearchDispatcher2 extends HttpServlet {
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
-        System.out.println("kms");
-//        ServletContext servletContext = getServletContext();
-//        try {
-//        	InputStream stream = servletContext.getResourceAsStream("Flushr.json");
-//        	Scanner sc = new Scanner(stream);
-//        	StringBuffer sb = new StringBuffer();
-//            //Appending each line to the buffer
-//            while(sc.hasNext()) {
-//               sb.append(" "+sc.nextLine());
-//            }
-//			BathroomDataParser.Init(sb.toString());
-//			sc.close();
-//		} catch (ClassNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-    }
+        
+        ServletContext servletContext = getServletContext();
+        // TODO get json file as stream, Initialize FakeYelpAPI by calling its initalize
+        // method
+        InputStream istream = servletContext.getResourceAsStream(Util.Constant.FileName);
+        Scanner sc = new Scanner(istream);
+        sc.useDelimiter("\\A");
+
+        String result = "";
+        while(sc.hasNext())
+        	result += sc.next();
+        
+        //System.out.println(result);
+        try {
+			BathroomDataParser.Init(result);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
     /**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
