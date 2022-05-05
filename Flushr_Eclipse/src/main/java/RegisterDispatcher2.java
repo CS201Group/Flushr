@@ -9,8 +9,16 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Serial;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.regex.Matcher;
+
+import Util.Bathroom;
+import Util.Constant;
 import Util.Helper2;
 
 /**
@@ -44,6 +52,33 @@ public class RegisterDispatcher2 extends HttpServlet {
     	String email = request.getParameter("email");
     	
     	String password = request.getParameter("password");
+    	
+        try {
+            String url = "jdbc:mysql://localhost:3306/Flushr_DB?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            
+            //TODO check if you've done the initialization
+            try {
+            	Connection conn = DriverManager.getConnection(url, Constant.DBUserName, Constant.DBPassword);
+          	  
+           	 	String sql_user = "INSERT INTO User (email, password) VALUES (?,?)";
+           	 	//String sql_bridge = "INSERT INTO bathroom_bookmarks (category_id, restaurant_id) VALUES (?,?)";
+           	 
+                
+           	 	//User
+           	 	PreparedStatement ps3 = conn.prepareStatement(sql_user, Statement.RETURN_GENERATED_KEYS);
+           	 	ps3.setString(1, email);
+           	 	ps3.setString(1, password);
+           	 	ps3.executeUpdate(); 
+            
+            }
+            catch(SQLException ex) {
+            	System.out.println("SQLException: " + ex.getMessage());
+            }
+        } 
+        catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     	
     	if (email.contentEquals("") || password.contentEquals("")) {
     		errorMessage = "Please enter a username and password.";

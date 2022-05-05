@@ -42,7 +42,7 @@ public class LoginDispatcher2 extends HttpServlet {
 				response.setContentType("text/html");
 				response.addCookie(cookie);
 				request.getSession().setAttribute("loggedInUser", name);
-				response.sendRedirect("index.jsp");
+				response.sendRedirect("main.jsp");
 				//request.getRequestDispatcher("index.jsp").forward(request, response);
 			}
 			else {
@@ -53,7 +53,7 @@ public class LoginDispatcher2 extends HttpServlet {
 	    		PrintWriter out = response.getWriter();
 	    		out.println("<span style='background-color:#ffcccb; width=100%;'>" + errorMessage + "</span>");
 	    		out.flush();
-	    		request.getRequestDispatcher("login.html").include(request, response);
+	    		request.getRequestDispatcher("login.jsp").include(request, response);
 			}
 			
 		} catch (SQLException e) {

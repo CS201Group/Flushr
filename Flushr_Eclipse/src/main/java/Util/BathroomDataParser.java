@@ -86,37 +86,8 @@ public class BathroomDataParser {
 //                  	   	ps3.setDouble(3, bathroom.getAccessibility());
 //                  	   	ps3.setDouble(3, bathroom.getWaitTime());
 //                  	   	ps3.executeUpdate(); 
-              	 
-              	 
 
-	                   	 
-
-//	                   	 
-//	                   	ResultSet ratingKey = ps2.getGeneratedKeys();
-//	                   	while(ratingKey.next()){
-//	                   		ps.setInt(4,ratingKey.getInt(1));
-//	                   	}
-//	                    
-//	                   	ps.executeUpdate();
-//                  	   	
-//                  	   	//Category
-//                  	   	for(Category category: restaurant.getCategories()) {
-//                  	   		PreparedStatement ps4 = conn.prepareStatement(sql4, Statement.RETURN_GENERATED_KEYS);
-//                  	   		ps4.setString(1, category.getTitle());
-//                  	   		ps4.executeUpdate(); 
-//                  	   		
-//                  	   		//Bridge Table
-//                  	   		PreparedStatement ps5 = conn.prepareStatement(sql5);
-//    	                   	ResultSet categoryKey = ps4.getGeneratedKeys();
-//    	                   	while(categoryKey.next()){
-//    	                   		ps5.setInt(1,categoryKey.getInt(1));
-//    	                   	}
-//    	                   	
-//    	                   	ps5.setString(2, restaurant.getId());
-//    	                   	ps5.executeUpdate();                
-//                  	   	}  
-//                     }
-        		} 
+                     } 
                 }
         		catch (JsonSyntaxException e) {
         			System.out.println(e.getMessage());
