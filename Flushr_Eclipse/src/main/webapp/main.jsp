@@ -33,7 +33,7 @@
     </div>
 
 
-      <form>
+    <form action="SearchDispatcher2">
       
     <div id="googleMap" style="width:92%;height:400px;left:4%"></div>
     

@@ -11,7 +11,7 @@ import java.io.PrintWriter;
 import java.io.Serial;
 import java.sql.SQLException;
 import java.util.regex.Matcher;
-import Util.Helper;
+import Util.Helper2;
 
 /**
  * Servlet implementation class RegisterDispatcher
@@ -46,7 +46,7 @@ public class RegisterDispatcher2 extends HttpServlet {
     	String password = request.getParameter("password");
     	
     	if (email.contentEquals("") || password.contentEquals("")) {
-    		errorMessage = "Please enter a username and password."
+    		errorMessage = "Please enter a username and password.";
     	}
     	
     	// check sql stuff to see if user is already registered
@@ -54,7 +54,7 @@ public class RegisterDispatcher2 extends HttpServlet {
     	if (errorMessage.contentEquals("")) {
     		// register the user
     		try {
-				if (Helper.emailAlreadyRegistered(email, request, response)) {
+				if (Helper2.emailAlreadyRegistered(email, request, response)) {
 					response.setContentType("text/html");
 		    		PrintWriter out = response.getWriter();
 		    		out.println("<span style='background-color:#ffcccb; width=100%;'>" + errorMessage + "</span>");
@@ -62,7 +62,7 @@ public class RegisterDispatcher2 extends HttpServlet {
 				}
 				else {
 					// register the user
-					Helper.registerUser(email, password);
+					Helper2.registerUser(email, password);
 					response.sendRedirect("main.html");
 					//request.getRequestDispatcher("index.jsp").forward(request, response);
 				}

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class Helper {
+public class Helper2 {
     /**
      * check if name is valid
      *
@@ -78,12 +78,12 @@ public class Helper {
         return 0;
     }
 
-    public static void registerUser(String email, String name, String password) throws SQLException {
+    public static void registerUser(String email, String password) throws SQLException {
 	    	try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Flushr_DB", "root", "root")) {
 	    		//Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/saleatsdb", "root", "root");
 	    		//conn.createStatement();
 	    		//String sql = "INSERT INTO users VALUES (?,?,?)";
-	    		String sql = "INSERT INTO users VALUES " + "(" + "'" + email + "'" + ", '" + name + "', '" + password + "')";
+	    		String sql = "INSERT INTO users VALUES " + "(" + "'" + email + "'"  + password + "')";
 	    		PreparedStatement stmt = conn.prepareStatement(sql);
 	    		/*
 	    		stmt.setString(1, email);

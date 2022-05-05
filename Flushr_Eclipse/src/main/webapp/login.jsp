@@ -72,7 +72,7 @@
     <!-- MANUAL LOG-IN -->
     <div id="loginMenu" class="container">
 
-      <form action="login.jsp" method="POST">
+      <form method="POST">
 
         <!-- Username -->  
         <div class="form-group row justify-content-center">
@@ -101,7 +101,7 @@
         
         <!-- Log-In Button -->
         <div class="row justify-content-center">
-          <button id="submitButton" type="submit" class="btn btn-outline-dark btn-lg">LOG IN</button>
+          <button id="submitButton" type="submit" formaction="LoginDispatcher2" class="btn btn-outline-dark btn-lg">LOG IN</button>
         </div>
       </form>
 

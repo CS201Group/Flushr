@@ -54,7 +54,7 @@
 	
 	<br>
 	
-	<form class="footerForm" action="SearchDispatcher" method="GET">
+	<form class="footerForm" action="SearchDispatcher2" method="GET">
 			<select name="searchSelect" id="category" required>
 				<option value="Category">Category</option>
 				<option value="Name">Name</option>	

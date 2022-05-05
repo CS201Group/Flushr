@@ -15,9 +15,8 @@ import java.sql.SQLException;
 /**
  * Servlet implementation class LoginDispatcher
  */
-@WebServlet("/LoginDispatcher2")
 
-
+@WebServlet(name="LoginDispatcher2",urlPatterns={"/LoginDispatcher2"})
 public class LoginDispatcher2 extends HttpServlet {
     @Serial
     private static final long serialVersionUID = 1L;
@@ -60,10 +59,7 @@ public class LoginDispatcher2 extends HttpServlet {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		} 
     }
 
     /**

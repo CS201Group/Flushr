@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.JsonParseException;
 
 import Util.Bathroom;
-import Util.BathroomDataParser;
+//import Util.BathroomDataParser;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,8 +19,8 @@ import java.util.Scanner;
 /**
  * Servlet implementation class SearchDispatcher
  */
-@SuppressWarnings("unused")
-@WebServlet("/SearchDispatcher")
+
+@WebServlet("/SearchDispatcher2")
 public class SearchDispatcher2 extends HttpServlet {
     @Serial
     private static final long serialVersionUID = 1L;
@@ -34,21 +34,22 @@ public class SearchDispatcher2 extends HttpServlet {
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
-        ServletContext servletContext = getServletContext();
-        try {
-        	InputStream stream = servletContext.getResourceAsStream("Flushr.json");
-        	Scanner sc = new Scanner(stream);
-        	StringBuffer sb = new StringBuffer();
-            //Appending each line to the buffer
-            while(sc.hasNext()) {
-               sb.append(" "+sc.nextLine());
-            }
-			BathroomDataParser.Init(sb.toString());
-			sc.close();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+        System.out.println("kms");
+//        ServletContext servletContext = getServletContext();
+//        try {
+//        	InputStream stream = servletContext.getResourceAsStream("Flushr.json");
+//        	Scanner sc = new Scanner(stream);
+//        	StringBuffer sb = new StringBuffer();
+//            //Appending each line to the buffer
+//            while(sc.hasNext()) {
+//               sb.append(" "+sc.nextLine());
+//            }
+//			BathroomDataParser.Init(sb.toString());
+//			sc.close();
+//		} catch (ClassNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
     }
 
     /**
@@ -58,7 +59,7 @@ public class SearchDispatcher2 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+    	System.out.println("kms2");
 //    	String searchType = request.getParameter("search-dropdown");
 //    	String keyWord = request.getParameter("search-text");
 //    	String sort = request.getParameter("sort-by");
