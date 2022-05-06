@@ -35,11 +35,8 @@ public class SearchDispatcher2 extends HttpServlet {
 
     @Override
     public void init(ServletConfig config) throws ServletException {
-        super.init(config);
-        
+        super.init(config);        
         ServletContext servletContext = getServletContext();
-        // TODO get json file as stream, Initialize FakeYelpAPI by calling its initalize
-        // method
         InputStream istream = servletContext.getResourceAsStream(Util.Constant.FileName);
         Scanner sc = new Scanner(istream);
         sc.useDelimiter("\\A");
@@ -64,8 +61,10 @@ public class SearchDispatcher2 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    	System.out.println("kms2");
-//    	String searchType = request.getParameter("search-dropdown");
+    	
+    	String searchType = request.getParameter("feedSearch");
+    	System.out.println(searchType);
+    	request.getRequestDispatcher("main.jsp").forward(request, response);
 //    	String keyWord = request.getParameter("search-text");
 //    	String sort = request.getParameter("sort-by");
 //    	if (sort != null && searchType != null && keyWord != null) {
@@ -75,9 +74,7 @@ public class SearchDispatcher2 extends HttpServlet {
 //    	}
 //    	else {
 //    		
-//    	}
-//    	
-    	
+//    	}	
     }
 
     /**

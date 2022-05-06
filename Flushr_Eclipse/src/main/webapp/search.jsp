@@ -25,11 +25,11 @@
 			<span class ="salEatsBanner" id = "banner">
 					<a href="index.jsp">SalEats!</a>
 					
-					<% String userName = null;
-					userName = (String) session.getAttribute("userName");
+					<% String name = null;
+					name = (String) session.getAttribute("name");
  
- 					if (userName != null) {
- 						out.write("<span class='potentialUsername'> Hi " + userName + "! </span>");
+ 					if (name != null) {
+ 						out.write("<span class='potentialUsername'> Hi " + name + "! </span>");
  					}%>
 			</span>
 			
@@ -41,7 +41,7 @@
 			<span class="homeAndLoginBanner">
 				<a href="index.jsp">Home &nbsp;</a>
 				<% 
-				if (userName == null) {
+				if (name == null) {
 					out.write("<a href='auth.jsp'/>&nbsp;" + "Login / Register" + "</a>");
 				}
 				else {

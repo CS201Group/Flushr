@@ -85,7 +85,7 @@
       function trySignup(){
         var xhttp = new XMLHttpRequest();
         xhttp.open("GET", "signup?signupEmail="+document.signupform.email.value + 
-            "&signupUsername=" + document.signupform.username.value + 
+            "&signupName=" + document.signupform.name.value + 
             "&signupPassword=" + document.signupform.password.value);
         
         xhttp.onreadystatechange = function(){
@@ -93,14 +93,14 @@
           if(this.readyState == XMLHttpRequest.DONE){
             
             if(this.responseText == "success"){
-              document.cookie="username=" + document.signupform.username.value
+              document.cookie="name=" + document.signupform.name.value
               window.location = "mainFeed.jsp";
             }
             else{
               document.getElementById("validateSignup").innerHTML = this.responseText;
             }
           }
-          document.cookie="username=" + document.signupform.username.value
+          document.cookie="name=" + document.signupform.name.value
           window.location = "mainFeed.jsp";
         }
         xhttp.send();	
@@ -122,10 +122,10 @@
 
         <!-- Email -->  
         <div class="form-group row justify-content-center">
-          <label for="email-id" class="loginText col-sm-12 text-center form-label-style">Email: <span class="text-danger">*</span></label>
+          <label for="name-id" class="loginText col-sm-12 text-center form-label-style">Name: <span class="text-danger">*</span></label>
           <div class="col-sm-12 col-md-8 col-lg-6">
-            <input type="text" class="form-control" id="email-id" name="email">
-                              <h3 id="email-error" class="invalid-feedback">Email is required.</h3>
+            <input type="text" class="form-control" id="name-id" name="name">
+                              <h3 id="name-error" class="invalid-feedback">Name is required.</h3>
           </div>
         </div>
 
@@ -133,8 +133,8 @@
         <div class="form-group row justify-content-center">
           <label for="username-id" class="loginText col-sm-12 text-center form-label-style">Email: <span class="text-danger">*</span></label>
           <div class="col-sm-12 col-md-8 col-lg-6">
-            <input type="text" class="form-control" id="username-id" name="email">
-                              <h3 id="username-error" class="invalid-feedback">Email is required.</h3>
+            <input type="text" class="form-control" id="email-id" name="email">
+                              <h3 id="email-error" class="invalid-feedback">Email is required.</h3>
           </div>
         </div>
 
@@ -179,67 +179,6 @@
       
   </body>
 </html>
-
-<script>
-function confPwd() {
-	var pw1 = document.getElementById("registerPW").value;
-	//debug: alert(pw1);
-	var pw2 = document.getElementById("registerPWC").value;
-	//debug: alert(pw2);
-	if (pw1 != pw2) {
-		alert("Passwords do not match.");
-		return false;
-	}
-	var tAC = document.getElementById("termsAndConditions").checked;
-	if (!tAC) {
-		alert("Please agree to Terms and Conditions to continue registration.");
-		return false;
-	}
-	return true;
-}
-
-var googleUser = {};
-var startApp = function() {
-	gapi
-			.load(
-					'auth2',
-					function() {
-						// Retrieve the singleton for the GoogleAuth library and set up the client.
-						auth2 = gapi.auth2
-								.init({
-									client_id : '283359501208-9hlna4chq4c91v3mq37k04461tjd7djl.apps.googleusercontent.com',
-									cookiepolicy : 'single_host_origin',
-
-								});
-						attachSignin(document.getElementById('customBtn'));
-					});
-
-};
-
-function attachSignin(element) {
-	console.log(element.id);
-	auth2.attachClickHandler(
-					element,
-					{},
-					function(googleUser) {
-						
-						document.cookie = "username="
-								+ googleUser.getBasicProfile().getName()
-										.split(" ")[0];
-						var url = "http://localhost:8080/csci201_assignment2_aadeshbajaj/GoogleDispatcher?"
-								+ "google="
-								+ encodeURIComponent("yes")
-								+ "&name-register="
-								+ encodeURIComponent(googleUser.getBasicProfile().getName())
-								+ "&email-register="
-								+ encodeURIComponent(googleUser.getBasicProfile().getEmail())
-								+ "&password-register=&confirm-password-register=&terms-checkbox=on";
-						window.location.replace(url);
-					}, function(error) {
-						alert(JSON.stringify(error, undefined, 2));
-					});
-}
-</script>
 
 
 <% 

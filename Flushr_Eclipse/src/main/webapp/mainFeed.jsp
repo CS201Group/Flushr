@@ -26,10 +26,10 @@
             <button class="menuButton">profile</button>
         </div>
     </div>
-    <form>
+    <form method="GET" action="SearchDispatcher2">
       <div id="feedForm">
         <div id="searchDiv">
-          <button id="feedSearchButton"> 
+          <button id="feedSearchButton" type="submit" formaction="SearchDispatcher2"> 
             <i class="fa-solid fa-magnifying-glass" id="searchIcon"></i>
           </button>
           <input type="text" id="feedSearch" name="feedSearch" placeholder="Search for nearby bathrooms..."/>

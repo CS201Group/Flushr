@@ -72,14 +72,14 @@
     <!-- MANUAL LOG-IN -->
     <div id="loginMenu" class="container">
 
-      <form method="POST">
+      <form method="POST" action="LoginDispatcher2">
 
         <!-- Username -->  
         <div class="form-group row justify-content-center">
-          <label for="username-id" class="loginText col-sm-12 text-center form-label-style">Email: <span class="text-danger">*</span></label>
+          <label for="name-id" class="loginText col-sm-12 text-center form-label-style">Name: <span class="text-danger">*</span></label>
           <div class="col-sm-12 col-md-8 col-lg-6">
-            <input type="text" class="form-control" id="username-id" name="email">
-                              <h3 id="username-error" class="invalid-feedback">Email is required.</h3>
+            <input type="text" class="form-control" id="name-id" name="name">
+                              <h3 id="name-error" class="invalid-feedback">Name is required.</h3>
           </div>
         </div>
 
@@ -108,20 +108,6 @@
     </div>
 
     <div id="padding"></div>
-
-
-    <!-- GOOGLE LOG-IN BUTTON -->
-    <div id="my-signin2">
-      <div id="googleLogIn" class="row">
-        <div class="col-md-3">
-          <a id="googleButton" class="btn btn-outline-dark" href="/users/googleauth" role="button" style="text-transform:none">
-            <img width="20px" style="margin-bottom:0px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"/>LOGIN WITH GOOGLE
-          </a>
-        </div>
-      </div>
-    </div>
-    
-      
   
   </body>
 </html>

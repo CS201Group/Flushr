@@ -48,11 +48,12 @@ public class RegisterDispatcher2 extends HttpServlet {
         //TODO
     	String errorMessage = "";
     	
+    	String name = request.getParameter("name");
     	
     	String email = request.getParameter("email");
     	
     	String password = request.getParameter("password");
-    	
+    	System.out.println(name);
         try {
             String url = "jdbc:mysql://localhost:3306/Flushr_DB?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
             Class.forName("com.mysql.cj.jdbc.Driver");
