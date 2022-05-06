@@ -35,8 +35,11 @@ public class SearchDispatcher2 extends HttpServlet {
 
     @Override
     public void init(ServletConfig config) throws ServletException {
-        super.init(config);        
+        super.init(config);
+        
         ServletContext servletContext = getServletContext();
+        // TODO get json file as stream, Initialize FakeYelpAPI by calling its initalize
+        // method
         InputStream istream = servletContext.getResourceAsStream(Util.Constant.FileName);
         Scanner sc = new Scanner(istream);
         sc.useDelimiter("\\A");
@@ -63,19 +66,32 @@ public class SearchDispatcher2 extends HttpServlet {
             throws ServletException, IOException {
     	
     	String searchType = request.getParameter("feedSearch");
-    	System.out.println(searchType);
+    	
+    	String filterCriteria = request.getParameter("filterCriteria");
+
+    	String sortCriteria = request.getParameter("sortCriteria");
+    	System.out.println(filterCriteria);
+    	System.out.println(sortCriteria);
+
     	request.getRequestDispatcher("main.jsp").forward(request, response);
-//    	String keyWord = request.getParameter("search-text");
-//    	String sort = request.getParameter("sort-by");
-//    	if (sort != null && searchType != null && keyWord != null) {
-//    		ArrayList<Bathroom> results = RestaurantDataParser.getRestaurants(keyWord, sort, searchType);
-//        	request.setAttribute("results", results);
-//        	request.getRequestDispatcher("search.jsp").forward(request, response);
-//    	}
-//    	else {
-//    		
-//    	}	
-    }
+    	
+    	if(searchType == null)
+    		searchType = "";
+    	if(filterCriteria == null)
+    		filterCriteria = "";
+    	if(sortCriteria == null)
+    		sortCriteria = "Rating";
+
+    	ArrayList<Bathroom> results = BathroomDataParser.getBathrooms(searchType, sortCriteria, filterCriteria);
+        System.out.println(results.get(0));
+        
+    	
+    		
+    		
+    		
+//    		request.setAttribute("results", results);
+//        	request.getRequestDispatcher("main.jsp").forward(request, response);
+    	}
 
     /**
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse

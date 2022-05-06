@@ -71,10 +71,11 @@
 	</script>
 
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSsz3irHfrMxknRHUs22qIQowp4vy919k&callback=initMap"></script>
-            <!-- Search button -->
+            
+            
             <div class="yellowButton" style="margin-top: 1.5%;">
                 <div id="mainSearchDiv">
-                    <button id="feedSearchButton" style="background-color: #FDCA40;"> 
+                    <button id="feedSearchButton" formaction="SearchDispatcher2" style="background-color: #FDCA40;"> 
                       <i class="fa-solid fa-magnifying-glass" style="font-size: 30px;"></i>
                     </button>
                     <input type="text" id="mainFeedSearch" name="feedSearch" placeholder="Search for nearby bathrooms..."/>
@@ -83,21 +84,22 @@
             
             <!-- Sort by buttons -->
             <div id="sortDiv">
-                <input list="sortCriteria" id="sortList" class="yellowButton" placeholder="Sort by...">
+                <input list="sortCriteria" name="sortCriteria" id="sortList" class="yellowButton" placeholder="Sort by...">
                 <datalist id="sortCriteria">
-                    <option value="A">
-                    <option value="B">
-                    <option value="C">
-                    <option value="D">
+                    <option value="Rating">
+                    <option value="Cleanliness">
+                    <option value="Accessibility">
+                    <option value="Wait Time">
                 </datalist>
-                <input list="filterCriteria" id="filterList" class="yellowButton" placeholder="Filter by...">
+                <input list="filterCriteria" name="filterCriteria" id="filterList" class="yellowButton" placeholder="Filter by...">
                 <datalist id="filterCriteria">
-                    <option value="A">
-                    <option value="B">
-                    <option value="C">
-                    <option value="D">
+                    <option value="Name">
+                    <option value="Location">
                 </datalist>
             </div>
+            
+            <!-- Search button -->
+            
 
             <!-- Results section -->
             <div id="resultsDiv" >

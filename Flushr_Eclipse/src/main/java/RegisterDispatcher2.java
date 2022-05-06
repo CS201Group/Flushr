@@ -62,15 +62,16 @@ public class RegisterDispatcher2 extends HttpServlet {
             try {
             	Connection conn = DriverManager.getConnection(url, Constant.DBUserName, Constant.DBPassword);
           	  
-           	 	String sql_user = "INSERT INTO User (email, password) VALUES (?,?)";
+           	 	String sql_user = "INSERT INTO User (email, password, name) VALUES (?,?,?)";
            	 	//String sql_bridge = "INSERT INTO bathroom_bookmarks (category_id, restaurant_id) VALUES (?,?)";
            	 
                 
            	 	//User
-           	 	PreparedStatement ps3 = conn.prepareStatement(sql_user, Statement.RETURN_GENERATED_KEYS);
-           	 	ps3.setString(1, email);
-           	 	ps3.setString(1, password);
-           	 	ps3.executeUpdate(); 
+           	 	PreparedStatement ps = conn.prepareStatement(sql_user, Statement.RETURN_GENERATED_KEYS);
+           	 	ps.setString(1, email);
+           	 	ps.setString(2, password);
+           	 	ps.setString(3, name);
+           	 	ps.executeUpdate(); 
             
             }
             catch(SQLException ex) {
