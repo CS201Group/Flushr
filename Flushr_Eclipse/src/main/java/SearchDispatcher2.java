@@ -70,8 +70,10 @@ public class SearchDispatcher2 extends HttpServlet {
     	String filterCriteria = request.getParameter("filterCriteria");
 
     	String sortCriteria = request.getParameter("sortCriteria");
-    	System.out.println(filterCriteria);
-    	System.out.println(sortCriteria);
+    	
+    	System.out.println("keyword: " + searchType);
+    	System.out.println("filter: " + filterCriteria);
+    	System.out.println("sort: " + sortCriteria);
 
     	request.getRequestDispatcher("main.jsp").forward(request, response);
     	
@@ -83,7 +85,18 @@ public class SearchDispatcher2 extends HttpServlet {
     		sortCriteria = "Rating";
 
     	ArrayList<Bathroom> results = BathroomDataParser.getBathrooms(searchType, sortCriteria, filterCriteria);
-        System.out.println(results.get(0));
+    	
+    	for( Bathroom bath: results) {
+    		System.out.println("name:" + bath.getBathroomName());
+    		System.out.println("location: " + bath.getBathroomLocation());
+    		System.out.println("rating:" + bath.getRating());
+    		System.out.println("accessiibility: " + bath.getAccessibility());
+    		System.out.println("cleanliness:" + bath.getCleanliness());
+    		System.out.println("wait_time: " + bath.getWaitTime());
+    		
+    		System.out.println();
+    		
+    	}
         
     	
     		

@@ -119,143 +119,54 @@ public class BathroomDataParser {
             Class.forName("com.mysql.cj.jdbc.Driver");
             String url = "jdbc:mysql://localhost:3306/Flushr_DB?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
             Connection conn = DriverManager.getConnection(url, Constant.DBUserName, Constant.DBPassword);
-            
-            ResultSet rs = null;
 
-            if (filter.contentEquals("Name")) {
-            	if (sort.contentEquals("Rating")) {
-            		System.out.println("HIHIHIHIHIIH");
-            		String sql = "SELECT Bathroom.bathroom_name, Bathroom.bathroom_id, Rating.rating_id, Rating.bathroom_id, Rating.overall_rating "
-            				+ "FROM Bathroom, Rating "
-            				+ "WHERE Rating.bathroom_id = Bathroom.bathroom_id "
-            				+ "WHERE Bathroom.bathroom_name LIKE '" + "%" + keyWord + "%' "
-            				+ "ORDER BY Rating.overall_rating DESC";
-            		PreparedStatement ps = conn.prepareStatement(sql);
-            		rs = ps.executeQuery();
-            	}
-            	else if (sort.contentEquals("Cleanliness")) {
-            		String sql = "SELECT Rating.rating_id "
-            				+ "FROM Rating "
-            				+ "INNER JOIN Bathroom ON Rating.bathroom_id = Bathroom.bathroom_id "
-            				+ "WHERE Bathroom.bathroom_name LIKE '" + "%" + keyWord + "%' "
-            				+ "ORDER BY Rating.cleanliness DESC";
-            		PreparedStatement ps = conn.prepareStatement(sql);
-            		rs = ps.executeQuery();
-            	}
-            	else if (sort.contentEquals("Accessibility")) {
-            		String sql = "SELECT Rating.rating_id "
-            				+ "FROM Rating "
-            				+ "INNER JOIN Bathroom ON Rating.bathroom_id = Bathroom.bathroom_id "
-            				+ "WHERE Bathroom.bathroom_name LIKE '" + "%" + keyWord + "%' "
-            				+ "ORDER BY Rating.accessibility DESC";
-            		PreparedStatement ps = conn.prepareStatement(sql);
-            		rs = ps.executeQuery();
-            	}
-            	else if (sort.contentEquals("Wait Time")) {
-            		String sql = "SELECT Rating.rating_id "
-            				+ "FROM Rating "
-            				+ "INNER JOIN Bathroom ON Rating.bathroom_id = Bathroom.bathroom_id "
-            				+ "WHERE Bathroom.bathroom_name LIKE '" + "%" + keyWord + "%' "
-            				+ "ORDER BY Rating.wait_time DESC";
-            		PreparedStatement ps = conn.prepareStatement(sql);
-            		rs = ps.executeQuery();
-            	}
-            }
-            else if (filter.contentEquals("Location")) {
-            	if (sort.contentEquals("Rating")) {
-            		String sql = "SELECT Rating.rating_id "
-            				+ "FROM Rating "
-            				+ "INNER JOIN Bathroom ON Rating.bathroom_id = Bathroom.bathroom_id "
-            				+ "WHERE Bathroom.bathroom_location LIKE '" + "%" + keyWord + "%' "
-            				+ "ORDER BY Rating.overall_rating DESC";
-            		PreparedStatement ps = conn.prepareStatement(sql);
-            		rs = ps.executeQuery();
-            	}
-            	else if (sort.contentEquals("Cleanliness")) {
-            		String sql = "SELECT Rating.rating_id "
-            				+ "FROM Rating "
-            				+ "INNER JOIN Bathroom ON Rating.bathroom_id = Bathroom.bathroom_id "
-            				+ "WHERE Bathroom.bathroom_location LIKE '" + "%" + keyWord + "%' "
-            				+ "ORDER BY Rating.cleanliness DESC";
-            		PreparedStatement ps = conn.prepareStatement(sql);
-            		rs = ps.executeQuery();
-            	}
-            	else if (sort.contentEquals("Accessibility")) {
-            		String sql = "SELECT Rating.rating_id "
-            				+ "FROM Rating "
-            				+ "INNER JOIN Bathroom ON Rating.bathroom_id = Bathroom.bathroom_id "
-            				+ "WHERE Bathroom.bathroom_location LIKE '" + "%" + keyWord + "%' "
-            				+ "ORDER BY Rating.accessibility DESC";
-            		PreparedStatement ps = conn.prepareStatement(sql);
-            		rs = ps.executeQuery();
-            	}
-            	else if (sort.contentEquals("Wait Time")) {
-            		String sql = "SELECT Rating.rating_id "
-            				+ "FROM Rating "
-            				+ "INNER JOIN Bathroom ON Rating.bathroom_id = Bathroom.bathroom_id "
-            				+ "WHERE Bathroom.bathroom_location LIKE '" + "%" + keyWord + "%' "
-            				+ "ORDER BY Rating.wait_time DESC";
-            		PreparedStatement ps = conn.prepareStatement(sql);
-            		rs = ps.executeQuery();
-            }
-            else {
-            	if (sort.contentEquals("Rating")) {
-            		System.out.println("IN HERE");
-            		String sql = "SELECT Rating.rating_id "
-            				+ "FROM Rating "
-            				+ "INNER JOIN Bathroom ON  Rating.bathroom_id = Bathroom.bathroom_id "
-            				+ "WHERE Bathroom.bathroom_name LIKE '" + "%" + keyWord + "%' "
-            				+ "OR Bathroom.bathroom_location LIKE '" + "%" + keyWord + "%' "
-            				+ "ORDER BY Rating.overall_rating DESC";
-            		PreparedStatement ps = conn.prepareStatement(sql);
-            		rs = ps.executeQuery();
-            	}
-            	else if (sort.contentEquals("Cleanliness")) {
-            		String sql = "SELECT Rating.rating_id "
-            				+ "FROM Rating "
-            				+ "INNER JOIN Bathroom ON  Rating.bathroom_id = Bathroom.bathroom_id "
-            				+ "WHERE Bathroom.bathroom_name LIKE '" + "%" + keyWord + "%' "
-            				+ "OR Bathroom.bathroom_location LIKE '" + "%" + keyWord + "%' "
-            				+ "ORDER BY Rating.cleanliness DESC";
-            		PreparedStatement ps = conn.prepareStatement(sql);
-            		rs = ps.executeQuery();
-            	}
-            	else if (sort.contentEquals("Accessibility")) {
-            		String sql = "SELECT Rating.rating_id "
-            				+ "FROM Rating "
-            				+ "INNER JOIN Bathroom ON Rating.bathroom_id = Bathroom.bathroom_id "
-            				+ "WHERE Bathroom.bathroom_name LIKE '" + "%" + keyWord + "%' "
-            				+ "OR Bathroom.bathroom_location LIKE '" + "%" + keyWord + "%' "
-            				+ "ORDER BY Rating.accessibility DESC";
-            		PreparedStatement ps = conn.prepareStatement(sql);
-            		rs = ps.executeQuery();
-            	}
-            	else if (sort.contentEquals("Wait Time")) {
-            		String sql = "SELECT Rating.rating_id "
-            				+ "FROM Rating "
-            				+ "INNER JOIN Bathroom ON Rating.bathroom_id = Bathroom.bathroom_id "
-            				+ "WHERE Bathroom.bathroom_name LIKE '" + "%" + keyWord + "%' "
-            				+ "OR Bathroom.bathroom_location LIKE '" + "%" + keyWord + "%' "
-            				+ "ORDER BY Rating.wait_time DESC";
-            		PreparedStatement ps = conn.prepareStatement(sql);
-            		rs = ps.executeQuery();
-            		
-            	}
-            		
-            }
-            	
+            ResultSet rs = null;
+            String sql = "";
             
+            if(filter.contentEquals("Name")) {
+            	sql = "SELECT Bathroom.bathroom_name, Bathroom.bathroom_id, Rating.rating_id, Rating.bathroom_id, Rating.overall_rating "
+            			+ "FROM Bathroom, Rating "
+            			+ "WHERE Rating.bathroom_id = Bathroom.bathroom_id "
+            			+ "AND LOWER(Bathroom.bathroom_name) LIKE LOWER('" + "%" + keyWord+ "%') ";
+            }
+            else if(filter.contentEquals("Location")) {
+            	sql = "SELECT Bathroom.bathroom_name, Bathroom.bathroom_location, Bathroom.bathroom_id, Rating.rating_id, Rating.bathroom_id, Rating.overall_rating "
+            			+ "FROM Bathroom, Rating "
+            			+ "WHERE Rating.bathroom_id = Bathroom.bathroom_id "
+            			+ "AND LOWER(Bathroom.bathroom_location) LIKE LOWER('" + "%" + keyWord+ "%') ";        	
+            }
+            
+            if(sql.isEmpty()) {
+            	sql = "SELECT Bathroom.bathroom_name, Bathroom.bathroom_id, Rating.rating_id, Rating.bathroom_id, Rating.overall_rating "
+            			+ "FROM Bathroom, Rating "
+            			+ "WHERE Rating.bathroom_id = Bathroom.bathroom_id ";
+            }
+            
+            if(sort.contentEquals("Rating")) {
+            	sql += "ORDER BY Rating.overall_rating DESC";  
+            }
+            else if(sort.contentEquals("Cleanliness")) {
+            	sql += "ORDER BY Rating.cleanliness DESC";  
+            }
+            else if(sort.contentEquals("Accessibility")) {
+            	sql += "ORDER BY Rating.accessibility DESC";  
+            }
+            else if(sort.contentEquals("Wait Time")) {
+            	sql += "ORDER BY Rating.wait_time ASC";  
+            }
+            
+    		PreparedStatement ps = conn.prepareStatement(sql);
+    		rs = ps.executeQuery();
+    		
             	
             while(rs.next()) {
-            	String name = rs.getString("bathroom_id");
-            	System.out.println("...name");
+            	String name = rs.getString("bathroom_name");
             	for(Bathroom bath : mBathrooms) {
             		if(bath.getBathroomName().equalsIgnoreCase(name)) {
             			bathrooms.add(bath);
             		}
             	}
             }
-          }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
