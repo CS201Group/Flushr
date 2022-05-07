@@ -1,0 +1,820 @@
+/* ----- ELEMENTS ----- */
+
+body {
+    background-color: hsl(44, 100%, 87%);
+    height:35rem;
+    margin: 10px;
+}
+
+header {
+    top: 3%;
+}
+
+h1 {
+    font-size: 28px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 20px;
+    text-align: center;
+}
+
+p {
+    font-size: 12px;
+    text-align: center;
+}
+
+/* ----- CLASSES ----- */
+
+/*-- navbar --*/
+.menuButton {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 1.75rem;
+    background: none;
+    border: none;
+    color: #31393C;
+    width: 110px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+}
+
+.active {
+    color: #33A1FD;
+}
+
+/* landing page */
+.linkText {
+    text-decoration: none;
+    color: white;
+}
+
+.guestText {
+    text-decoration: none;
+    color: black;
+}
+
+/* login page */
+.loginText {
+    color: #F79824;
+}
+
+/**/
+.resultText {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: left;
+    color: #2176FF;
+    display: inline-block;
+	text-decoration: underline;
+	background: none;
+	border: none;
+}
+
+.feedDirectionIcon{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
+    font-family: 'Montserrat';
+    font-style: normal;
+}
+
+.resultDist {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: right;
+    color: #31393C;
+    display: inline;
+
+}
+
+.resultRating {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: right;
+    color: #31393C;
+    display: inline-block;
+
+}
+
+.blueTitle {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 41px;
+    color: #2176FF;
+}
+
+.yellowButton {
+    height: 3rem;
+    background: #FDCA40;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.feedImgContainer{
+    width: 1340px;
+    height: 286px;
+    overflow: hidden;
+}
+
+.feedImg{
+    width: 100%;
+    height: 100%;
+
+}
+
+.brTitle{
+    left: 40px;
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 33px;
+
+    color: #2176FF;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    padding: none;
+    margin: none;
+}
+.feedDesRow1{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: none;
+    margin: none;
+}
+
+.feedDesRow2{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: -20px;
+}
+
+.feedDescription{
+    padding-top: 10px;
+    margin-left: 40px;
+    margin-right: 60px;
+    background-color: none;
+
+}
+
+.feedWait{
+    font-family: 'Montserrat';
+    font-style: normal;
+    display: flex;
+    align-items: flex-start;
+    text-align: right;
+
+    color: #31393C;
+
+
+}
+
+.feedWaitFont{
+    font-size: 14px;
+}
+
+.headerBar{
+    position: relative;
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.detailsInfoDiv {
+	height: 30rem;
+	display: block;
+}
+
+.brImgDiv {
+	display: inline-block;
+	color: red;
+}
+
+
+.detailsDiv {
+	display: inline-block;
+	position: fixed;
+    top: 8rem;
+    width: 50%;
+    height: 40rem;
+    padding: 1rem;
+}
+
+.detailsTitle {
+	display: inline-block;
+}
+
+.bathroomImg {
+	margin: 3rem;
+	height: 40rem; 
+	object-fit: fill;
+}
+
+.saveBathroom {
+	
+	
+	border: none;
+	background: none;
+	
+	top: 9.5rem;
+	
+}
+
+.details {
+	font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.6rem;
+    background: none;
+    border: none;
+    color: #31393C;
+    
+    text-align: left;
+}
+
+.dInfoDiv {
+	
+}
+
+/* ----- IDs ----- */
+
+/* landing page */
+#title {
+    margin: 0px;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 100px;
+    line-height: 136px;
+    text-align: center;
+    color: #CB743F;
+
+}
+
+#tagline {
+    margin: 0px;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 65px;
+    text-align: center;
+    color: #31393C;
+}
+
+#headingDiv {
+    position: fixed;
+    top: 40%;
+    left: 50%; 
+    transform: translate(-50%,-130%);
+}
+
+#loginButton {
+    position: relative;
+    width: 259.26px;
+    height: 50px;
+    background: #33A1FD;
+    border-radius: 30px;
+    border: none;
+    color: white;
+    margin-right: 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin-bottom: 2%;
+}
+
+#signInButton {
+    position: relative;
+    width: 259.26px;
+    height: 50px;
+    background: #F79824;
+    border-radius: 30px;
+    border: none;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+#loginButtons {
+    position: fixed;
+    top: 75%;
+    left: 50%; 
+    transform: translate(-50%, 0%);
+    border-color: none;
+    box-shadow: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+#mainButtons {
+    display: flex;
+}
+
+#guestButtonDiv {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 1.5rem;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    left: 37%;
+    position: relative;
+    margin-top: 5%;
+}
+
+#guestButton {
+    background: none;
+    border: none;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+#guestText {
+    text-decoration: none;
+    font-weight: 500;
+}
+
+#headerTitle {
+    padding-left: 20px;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 2.5rem;
+    background-color: none;
+    margin-top: 0px;
+}
+
+#slogan{
+    padding-left: 20px;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    background-color: none;
+}
+
+#menuButtons {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* login page */
+#headingDivLogIn {
+    position: fixed;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%,-130%);
+}
+
+#googleLogIn, #loginMenu {
+    position: fixed;
+    transform: translate(-50%, 0%);
+    border-color: none;
+    box-shadow: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+#googleLogIn { /* google log-in api div */
+    top: 80%;
+    left: 50%;
+    display: flex;
+    align-items: center;
+}
+
+#googleButton {
+    width: 259.26px;
+    height: 50px;
+    background: #FFEEBE;
+    border-radius: 30px;
+    border: 2px solid #33A1FD;
+    color: #31393C;
+    margin-right: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#googleButton:hover {
+    background-color: #33A1FD;
+    color: white;
+}
+
+
+#loginMenu {
+    top: 50%;
+    left: 50%; 
+}
+
+#submitButton {
+    margin-top: 3%;
+    width: 259.26px;
+    height: 50px;
+    background: #FFEEBE;
+    border-radius: 30px;
+    border: 2px solid #F79824;
+    color: #31393C;
+    margin-right: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    align-self: center;
+}
+
+#submitButton:hover {
+    background-color: #F79824;
+    color: white;
+}
+
+/* main feed */
+/* #mapDiv {
+    position: absolute;
+    top: 14%;
+    left: 7.5%;
+    width: 85%; 
+}
+
+#map {
+    display: flex;
+    width: 100%;
+    height: 25rem;
+    
+    background: #CB743F;
+} */
+
+#searchBarDiv {
+    margin-top: 1.5%;
+    width: 100%;
+        
+}
+
+#searchButton {
+    margin-left: 1.27rem;
+    margin-top: 1.27rem;
+    margin-right: 0.3rem;
+    border: none;
+    background: none;
+}
+
+#searchText {
+    border: none;
+    background: none;
+    width: 87%;
+    height: 60%;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+#searchResults {
+    overflow-y: scroll;
+}
+
+#sortDiv {
+    margin-top: 1.5%;
+    border: none;
+    background: none;
+    width: 100%;
+    display: inline-block;
+}
+
+#sortList {
+    width: 48.5%;
+    border: none;
+    align-items: center;
+    margin-right: 1%;    
+}
+
+#filterList {
+    width: 48.5%;
+    border: none;
+    align-items: center; 
+    margin-left: 1%;  
+}
+
+#resultsDiv {
+    margin-top: 1.5rem;
+}
+
+#resultsTitle {
+    text-align: left;
+}
+
+#resultsData {
+    display: flex;
+    justify-content: space-between;
+}
+
+#headerDiv{
+    position: relative;
+    width: 100%;
+    padding-top: 20px;
+    height: 325px;
+    background: #CB743F;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#mainDescriptionDiv{
+    display: flex;
+    justify-content: space-between;
+    width: 170px;
+}
+
+#mainHeaderDiv{
+    position: relative;
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#searchDiv{
+    width: 1021px;
+    height: 99px;
+
+    background: #FFEEBE;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    display: flex;
+    align-items: center;
+    margin-top: -50px;
+    z-index: 1;
+}
+
+#feedSearch{
+    width: 100%;
+    border: none;
+    align-items: center;
+    margin-right: 1%;    
+    height: 3rem;
+    background: #FFEEBE;
+    padding-left: 4%;
+}
+
+#mainFeedSearch{
+    width: 48.5%;
+    border: none;
+    align-items: center;
+    margin-right: 1%;    
+    height: 2em;
+    padding-left: 4%;
+    background: #FDCA40;
+}
+
+#searchIcon{
+    font-size: 50px;
+}
+
+#feedSearchButton{
+    padding-left: 5%;
+    background-color:#FFEEBE;
+    border: none;
+}
+
+#feedSubHeader{
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    text-align: left;
+    color: #31393C;
+}
+
+#feedSubHeader2{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: left;
+    margin-top: -14px;
+    color: #31393C;
+}
+
+#placeHolderImgFeed{
+    width: 1340px;
+    height: 286px;
+    margin-left: 40px;
+    background: #FDCA40;
+}
+
+#logo{
+    white-space: nowrap;
+    padding-left: 20px;
+}
+
+#mainSearchDiv{
+    display: flex;
+    align-items: center;
+    padding-top: 8px;
+}
+
+#feedForm{
+    display: flex;
+    justify-content: center;
+}
+
+#feedDisplayHeader{
+    margin-top: 50px;
+    text-align: left;
+    padding-left: 40px;
+}
+
+#feedStars{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+
+    color: #FDCA40;
+
+
+}
+
+#profileBackground{
+    height: 100%;
+    margin-top: 10%;
+    background: #FDCA40;
+    border-radius: 550px 550px 0px 0px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#pfp{
+    width: 350px;
+    height: 350px;
+
+    background: #33A1FD;
+    border-radius: 1000px;
+    margin-top: -10%;
+
+    /* POOR BUG FIX */
+    margin-left: 38%;
+}
+
+#profileText1{
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 38px;
+    align-items: center;
+    text-align: center;
+
+    color: #31393C;
+}
+
+#profileText2{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    align-items: center;
+    text-align: center;
+
+    color: #31393C;
+}
+
+#box{
+    width: 344px;
+    height: 122px;
+
+    background: #CB743F;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+}
+
+#row{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5%;
+}
+
+#boxContainer{
+    padding-top: 20px;
+    width: 50%;
+    padding-left: 25%;
+}
+
+#brPlaceholder{
+    width: 720px;
+    height: 461px;
+
+    background: #FDCA40;
+}
+
+#detailsPortion{
+    padding-left: 40px;
+    display: flex;
+    flex-direction: row;
+}
+
+#rightHalfRatings{
+    
+}
+
+#ratingRow1{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#ratingSubRow1{
+    display: flex;
+    justify-content: space-between;
+    margin-top: -30px;
+    width: 644px;
+}
+
+#ratingRow2{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+#ratingsReviews{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#placeHolderReview{
+    width: 1329px;
+    height: 150px;
+    margin-top: 20px;
+    background: #CB743F;
+}
+
+#ratingRow3{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 40px;
+    margin-left: 100px;
+    margin-right: 120px;
+}
+
+#ratingTitle{
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 38px;
+
+    color: #2176FF;
+    padding-left: 50px;
+
+}
+
+#reviewButton{
+    background: none;
+    border: none;
+
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 27px;
+
+    padding-right: 10px;
+
+    color: #31393C;
+}
+
+/* other */

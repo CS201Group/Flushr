@@ -1,0 +1,101 @@
+[
+  {
+    "bathroom_name": "Waite Phillips Hall (WPH)",
+    "bathroom_location": "3470 Trousdale Pkwy, Los Angeles, CA 90089",
+    "overall_rating": 4.5,
+    "cleanliness": 4,
+    "accessibility": 5,
+    "wait_time": 0,
+    "image": "https://i.imgur.com/x5eVWLa.jpg"
+  },
+  {
+    "bathroom_name": "Verna and Peter Dauterive Hall (VPD)",
+    "bathroom_location": "645 W Exposition Blvd, Los Angeles, CA 90089",
+    "overall_rating": 5,
+    "cleanliness": 5,
+    "accessibility": 5,
+    "wait_time": 0,
+    "image": "https://i.imgur.com/cQv6ZGf.jpg"
+  },
+  {
+    "bathroom_name": "Leavey Library (LVL)",
+    "bathroom_location": "651 W 35th St, Los Angeles, CA 90089",
+    "overall_rating": 3.5,
+    "cleanliness": 2,
+    "accessibility": 5,
+    "wait_time": 0,
+    "image": "https://i.imgur.com/tED75b8.jpg"
+  },
+  {
+    "bathroom_name": "Taper Hall (THH)",
+    "bathroom_location": "3501 Trousdale Pkwy, Los Angeles, CA 90089",
+    "overall_rating": 2.8,
+    "cleanliness": 3,
+    "accessibility": 3,
+    "wait_time": 2,
+    "image": "https://i.imgur.com/PKatbXB.jpg"
+  },
+  {
+    "bathroom_name": "USC Village",
+    "bathroom_location": "3301 S Hoover St, Los Angeles, CA 90007",
+    "overall_rating": 3.9,
+    "cleanliness": 4,
+    "accessibility": 5,
+    "wait_time": 3,
+    "image": "https://i.imgur.com/EzOVuz2.jpg"
+  },
+  {
+    "bathroom_name": "Fertitta Hall (JFF)",
+    "bathroom_location": "610 Childs Way, Los Angeles, CA 90089",
+    "overall_rating": 4.3,
+    "cleanliness": 5,
+    "accessibility": 4,
+    "wait_time": 1,
+    "image": "https://i.imgur.com/V2r69ge.jpg"
+  },
+  {
+    "bathroom_name": "Montgomery Ross Fisher Building (MRF)",
+    "bathroom_location": "669 W 34th St, Los Angeles, CA 90089",
+    "overall_rating": 2.7,
+    "cleanliness": 3.5,
+    "accessibility": 3,
+    "wait_time": 3,
+    "image": "https://i.imgur.com/bOU89Fo.jpg"
+  },
+  {
+    "bathroom_name": "Wallis Annenberg Hall (ANN)",
+    "bathroom_location": "3630 Watt Way, Los Angeles, CA 90089",
+    "overall_rating": 4.8,
+    "cleanliness": 5,
+    "accessibility": 4,
+    "wait_time": 0,
+    "image": "https://i.imgur.com/e8qNimz.jpg"
+  },
+  {
+    "bathroom_name": "Ray R. Irani Hall (RRI)",
+    "bathroom_location": "1050 Childs Way, Los Angeles, CA 90089",
+    "overall_rating": 4.1,
+    "cleanliness": 5,
+    "accessibility": 3,
+    "wait_time": 0,
+    "image": "https://i.imgur.com/Ass7g6i.jpg"
+  },
+  {
+    "bathroom_name": "Gould School of Law",
+    "bathroom_location": "699 W Exposition Blvd, Los Angeles, CA 90089",
+    "overall_rating": 4.5,
+    "cleanliness": 4,
+    "accessibility": 3,
+    "wait_time": 0,
+    "image": "https://i.imgur.com/SYgdVDW.jpg"
+  },
+  {
+    "bathroom_name": "Ronald Tutor Campus Center (RTCC)",
+    "bathroom_location": "3607 Trousdale Pkwy, Los Angeles, CA 90089",
+    "overall_rating": 4.2,
+    "cleanliness": 5,
+    "accessibility": 3.6,
+    "wait_time": 0,
+    "image": "https://i.imgur.com/ad6dahM.jpg"
+  }
+]
