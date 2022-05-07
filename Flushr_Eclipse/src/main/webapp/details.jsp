@@ -38,6 +38,27 @@
     
     <%Bathroom br = (Bathroom) request.getSession().getAttribute("selectedBathroom"); %>
     
+    <script>
+    function saveEntry() {
+    	<%
+    	
+    	String currentSaved = (String) request.getSession().getAttribute("valuesStored"); 
+    	if (currentSaved == null) {
+    		request.getSession().setAttribute("valuesStored", "t");
+    		request.getSession().setAttribute("idx", 1);
+    	} else {
+    		int index = (int) request.getSession().getAttribute("idx"); 
+    		request.getSession().setAttribute(String.valueOf(index), true);
+    		for (int i = 0; i < index; i++) {
+    			System.out.println(request.getSession().getAttribute(String.valueOf(i)));
+    		}
+    	}
+    	
+    	
+    	
+    	%>
+    }
+    </script>
     
     <form method="POST" action="DetailsDispatcher">
 	    <div id=detailsInfoDiv>
@@ -54,9 +75,9 @@
 			    	<h2 class="details">Cleanliness: <%out.write(String.valueOf(br.getCleanliness()));%></h2>
 			    	<h2 class="details">Wait Time: <%out.write(String.valueOf(br.getWaitTime()));%></h2> 
 		    	</div>
-		    	<%request.getSession().invalidate(); %>
+		    	
 		    	<br><br><br><br><br><br>
-		    	<button class="blueTitle saveBathroom" name="saveEntry" formaction="DetailsDispatcher">Save</button>
+		    	<button class="blueTitle saveBathroom" name="saveEntry" href="main.jsp">Save</button>
 		    </div>
 	    </div>
     </form>

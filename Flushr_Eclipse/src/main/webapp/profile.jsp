@@ -37,7 +37,7 @@
       
       <!-- Greeting -->
       <div>
-        <p id="profileText1">Hi, Tommy Trojan!</p>
+        <p id="profileText1">Hi!</p>
         <p id="profileText2">We hope you had a good day today.</p>
       </div>
 

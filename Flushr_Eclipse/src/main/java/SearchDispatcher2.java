@@ -10,7 +10,6 @@ import com.google.gson.JsonParseException;
 import Util.Bathroom;
 import Util.BathroomDataParser;
 //import Util.BathroomDataParser;
-import Util.RestaurantDataParser;
 
 import java.io.IOException;
 import java.io.InputStream;
