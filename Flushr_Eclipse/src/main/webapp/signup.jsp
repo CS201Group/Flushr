@@ -118,13 +118,13 @@
     <!-- MANUAL SIGN-IN -->
     <div id="loginMenu" class="container">
 
-      <form name="signupform" onSubmit="return trySignup()">
+      <form name="signupform" onSubmit="return trySignup()" method="POST" action="RegisterDispatcher2">
 
         <!-- Email -->  
         <div class="form-group row justify-content-center">
           <label for="name-id" class="loginText col-sm-12 text-center form-label-style">Name: <span class="text-danger">*</span></label>
           <div class="col-sm-12 col-md-8 col-lg-6">
-            <input type="text" class="form-control" id="name-id" name="name">
+            <input type="text" class="form-control" id="name-id" name="registerName">
                               <h3 id="name-error" class="invalid-feedback">Name is required.</h3>
           </div>
         </div>
@@ -133,7 +133,7 @@
         <div class="form-group row justify-content-center">
           <label for="username-id" class="loginText col-sm-12 text-center form-label-style">Email: <span class="text-danger">*</span></label>
           <div class="col-sm-12 col-md-8 col-lg-6">
-            <input type="text" class="form-control" id="email-id" name="email">
+            <input type="text" class="form-control" id="email-id" name="registerEmail">
                               <h3 id="email-error" class="invalid-feedback">Email is required.</h3>
           </div>
         </div>
@@ -142,14 +142,14 @@
         <div class="form-group row justify-content-center">
           <label for="password-id" class="loginText col-sm-12 text-center form-label-style">Password: <span class="text-danger">*</span></label>
           <div class="col-sm-12 col-md-8 col-lg-6">
-            <input type="password" class="form-control" id="password-id" name="password">
+            <input type="password" class="form-control" id="password-id" name="registerPassword">
                               <h3 id="password-error" class="invalid-feedback">Password is required.</h3>
           </div>
         </div>
 
         <!-- Required Text -->
         <div class="row justify-content-center">
-          <div class="col-sm-12 col-md-8 col-lg-6">
+          <div class="col-sm-12 col-md-8 col-lg-6"> 
             <span class="text-danger font-italic">Required *</span>
           </div>
         </div>

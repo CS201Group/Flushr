@@ -14,8 +14,8 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/jstl-1.2.jar"/>
-	<classpathentry kind="lib" path="/Users/kylersaiki/GitProjects/Flushr/gson-2.8.6.jar"/>
-	<classpathentry kind="lib" path="/Users/kylersaiki/GitProjects/Flushr/mysql-connector-java-8.0.21.jar"/>
-	<classpathentry kind="lib" path="/Users/kylersaiki/GitProjects/Flushr/servlet-api.jar"/>
+	<classpathentry kind="lib" path="/Users/elainetoh/CS201Project/Flushr/gson-2.8.6.jar"/>
+	<classpathentry kind="lib" path="/Users/elainetoh/CS201Project/Flushr/mysql-connector-java-8.0.21.jar"/>
+	<classpathentry kind="lib" path="/Users/elainetoh/CS201Project/Flushr/servlet-api.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

@@ -44,6 +44,7 @@ public class BathroomDataParser {
             	Connection conn = DriverManager.getConnection(url, Constant.DBUserName, Constant.DBPassword);
                 // First read the json file, restaurant_data.json
                 Gson gson = new Gson();
+                ready = true;
                 try {
         			// read in the JSON file, but catch appropriate exception if
         			// the file can't be read or it has bad inputs
@@ -80,14 +81,6 @@ public class BathroomDataParser {
 	                   	}
 	                   	ps2.executeUpdate(); 
                   	   	
-                  	   	
-//                  	   	//User
-//                  		PreparedStatement ps3 = conn.prepareStatement(sql_user, Statement.RETURN_GENERATED_KEYS);
-//                  	   	ps3.setString(1, bathroom.getRating());
-//                  	   	ps3.setDouble(2, bathroom.getCleanliness());
-//                  	   	ps3.setDouble(3, bathroom.getAccessibility());
-//                  	   	ps3.setDouble(3, bathroom.getWaitTime());
-//                  	   	ps3.executeUpdate(); 
 
                      } 
                 }
@@ -103,7 +96,6 @@ public class BathroomDataParser {
         catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        ready = true;
     
     }
 
@@ -135,8 +127,7 @@ public class BathroomDataParser {
             			+ "WHERE Rating.bathroom_id = Bathroom.bathroom_id "
             			+ "AND LOWER(Bathroom.bathroom_location) LIKE LOWER('" + "%" + keyWord+ "%') ";        	
             }
-            
-            if(sql.isEmpty()) {
+            else {
             	sql = "SELECT Bathroom.bathroom_name, Bathroom.bathroom_id, Rating.rating_id, Rating.bathroom_id, Rating.overall_rating "
             			+ "FROM Bathroom, Rating "
             			+ "WHERE Rating.bathroom_id = Bathroom.bathroom_id ";

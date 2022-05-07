@@ -1,10 +1,11 @@
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import javax.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -47,85 +48,89 @@ public class RegisterDispatcher2 extends HttpServlet {
             throws ServletException, IOException {
         //TODO
     	String errorMessage = "";
+    
+    	String name = request.getParameter("registerName");
     	
-    	String name = request.getParameter("name");
+    	String email = request.getParameter("registerEmail");
     	
-    	String email = request.getParameter("email");
+    	String password = request.getParameter("registerPassword");
     	
-    	String password = request.getParameter("password");
-    	System.out.println(name);
         try {
             String url = "jdbc:mysql://localhost:3306/Flushr_DB?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
             Class.forName("com.mysql.cj.jdbc.Driver");
             
             //TODO check if you've done the initialization
-            try {
-            	Connection conn = DriverManager.getConnection(url, Constant.DBUserName, Constant.DBPassword);
-          	  
-           	 	String sql_user = "INSERT INTO User (email, password, name) VALUES (?,?,?)";
-           	 	//String sql_bridge = "INSERT INTO bathroom_bookmarks (category_id, restaurant_id) VALUES (?,?)";
-           	 
-                
-           	 	//User
-           	 	PreparedStatement ps = conn.prepareStatement(sql_user, Statement.RETURN_GENERATED_KEYS);
-           	 	ps.setString(1, email);
-           	 	ps.setString(2, password);
-           	 	ps.setString(3, name);
-           	 	ps.executeUpdate(); 
+            if (!email.contains(".com") && !email.contains(".net") && !email.contains(".gov")
+				&& !email.contains(".edu") && !email.contains(".org") && !email.contains(".co.uk")
+				&& !email.contains(".biz") && !email.contains(".info")) {
+	        	request.setAttribute("error","Invalid user");
+	        	RequestDispatcher requestDispatcher = request.getRequestDispatcher("signup.jsp");
+	        	requestDispatcher.forward(request, response);
+	        }
+            if(!email.contains("@")) {
+	        	request.setAttribute("error","Invalid user");
+        		RequestDispatcher requestDispatcher = request.getRequestDispatcher("signup.jsp");
+        		requestDispatcher.forward(request, response);
+	        }
             
-            }
-            catch(SQLException ex) {
-            	System.out.println("SQLException: " + ex.getMessage());
-            }
-        } 
-        catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    	
-    	if (email.contentEquals("") || password.contentEquals("")) {
-    		errorMessage = "Please enter a username and password.";
-    	}
-    	
-    	// check sql stuff to see if user is already registered
-    	
-    	if (errorMessage.contentEquals("")) {
-    		// register the user
-    		try {
-				if (Helper2.emailAlreadyRegistered(email, request, response)) {
-					response.setContentType("text/html");
-		    		PrintWriter out = response.getWriter();
-		    		out.println("<span style='background-color:#ffcccb; width=100%;'>" + errorMessage + "</span>");
-		    		request.getRequestDispatcher("signup.jsp").include(request, response);
-				}
+        	
+        	if (email.contentEquals("") || password.contentEquals("")) {
+        		request.setAttribute("error","Invalid input");
+        		RequestDispatcher requestDispatcher = request.getRequestDispatcher("signup.jsp");
+        		requestDispatcher.forward(request, response);
+        	}
+	
+			// check if email already exists in the database, if so, redirect back to login
+			// page
+			String sql = "INSERT INTO user (email, name, password) VALUES (?, ?, ?)";
+	
+			Connection conn = null;
+			PreparedStatement ps = null;
+	
+	
+			try {
+            	conn = DriverManager.getConnection(url, Constant.DBUserName, Constant.DBPassword);
+				ps = conn.prepareStatement("SELECT * FROM user WHERE email= ?");
+				ps.setString(1, email);
+				ResultSet rs = ps.executeQuery();
+				if (rs.next()) {
+					throw new Exception("User Already Exists");
+				}	
 				else {
-					// register the user
-					Helper2.registerUser(email, password);
-					response.sendRedirect("main.jsp");
-					//request.getRequestDispatcher("index.jsp").forward(request, response);
+					try {
+						conn = DriverManager.getConnection(url, Constant.DBUserName, Constant.DBPassword);
+						ps = conn.prepareStatement(sql);
+						ps.setString(1, email);
+						ps.setString(2, name);
+						ps.setString(3, password);
+						int temp = ps.executeUpdate();
+						HttpSession session = request.getSession();
+						session.setAttribute("name", name);
+						
+						response.sendRedirect("mainFeed.jsp");
+						// System.out.println("connection successful!");
+					} catch (SQLException ex) {
+						System.out.println("SQLException: " + ex.getMessage());
+					}
 				}
-			} catch (ServletException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+	
+			} catch (Exception ex) {
+				System.out.println("Exception: " + ex.getMessage());
+				//request.setAttribute("errorMessage", "Invalid email or password. Or, bad login. Please try again.");
+				name = "";
+				RequestDispatcher requestDispatcher = request
+			            .getRequestDispatcher("signup.jsp");
+			    requestDispatcher.forward(request, response);	
+
 			}
-    		catch (ClassNotFoundException e) {
-    			e.printStackTrace();
-    		}
-    	}
-    	else {
-    		response.setContentType("text/html");
-    		PrintWriter out = response.getWriter();
-    		out.println("<span style='background-color:#ffcccb; width=100%;'>" + errorMessage + "</span>");
-    		request.getRequestDispatcher("signup.jsp").include(request, response);
-    	}
+			
+
+       }
+       catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
     	
     }
-
     /**
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
      * response)

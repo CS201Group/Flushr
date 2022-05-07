@@ -48,7 +48,7 @@ public class SearchDispatcher2 extends HttpServlet {
         while(sc.hasNext())
         	result += sc.next();
         
-        //System.out.println(result);
+        System.out.println("INIt RAN");
         try {
 			BathroomDataParser.Init(result);
 		} catch (ClassNotFoundException e) {
@@ -80,7 +80,7 @@ public class SearchDispatcher2 extends HttpServlet {
     	if(searchType == null)
     		searchType = "";
     	if(filterCriteria == null)
-    		filterCriteria = "Cleanliness";
+    		filterCriteria = "";
     	if(sortCriteria == null)
     		sortCriteria = "Rating";
 
