@@ -127,11 +127,6 @@ public class BathroomDataParser {
             			+ "WHERE Rating.bathroom_id = Bathroom.bathroom_id "
             			+ "AND LOWER(Bathroom.bathroom_location) LIKE LOWER('" + "%" + keyWord+ "%') ";        	
             }
-            else {
-            	sql = "SELECT Bathroom.bathroom_name, Bathroom.bathroom_id, Rating.rating_id, Rating.bathroom_id, Rating.overall_rating "
-            			+ "FROM Bathroom, Rating "
-            			+ "WHERE Rating.bathroom_id = Bathroom.bathroom_id ";
-            }
             
             if(sort.contentEquals("Rating")) {
             	sql += "ORDER BY Rating.overall_rating DESC";  

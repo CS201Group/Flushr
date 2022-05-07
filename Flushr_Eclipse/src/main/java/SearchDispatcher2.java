@@ -80,7 +80,7 @@ public class SearchDispatcher2 extends HttpServlet {
     	if(searchType == null)
     		searchType = "";
     	if(filterCriteria == null)
-    		filterCriteria = "";
+    		filterCriteria = "Name";
     	if(sortCriteria == null)
     		sortCriteria = "Rating";
 

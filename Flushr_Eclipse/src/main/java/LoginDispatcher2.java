@@ -1,15 +1,22 @@
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import Util.Constant;
 import Util.Helper;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Serial;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -34,32 +41,45 @@ public class LoginDispatcher2 extends HttpServlet {
     		String email = request.getParameter("email");
         	String password = request.getParameter("password");
         	
-        	
-			boolean isValidUser = Helper.checkPassword(email, password);
-			if (isValidUser) {
-				String userEmail = Helper.getUserName(email);
-				Cookie cookie = new Cookie("email", userEmail);
-				response.setContentType("text/html");
-				response.addCookie(cookie);
-				request.getSession().setAttribute("loggedInUser", userEmail);
-				response.sendRedirect("main.jsp");
-				//request.getRequestDispatcher("index.jsp").forward(request, response);
-			}
-			else {
+        	String url = "jdbc:mysql://localhost:3306/Flushr_DB?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = null;
+			PreparedStatement ps = null;
+	
+	
+			try {
+            	conn = DriverManager.getConnection(url, Constant.DBUserName, Constant.DBPassword);
+				ps = conn.prepareStatement("SELECT * FROM user WHERE email= ? AND password= ?");
+				ps.setString(1, email);
+				ps.setString(2, password);
+				ResultSet rs = ps.executeQuery();
+				if (rs.next()) {
+					HttpSession session = request.getSession();
+					session.setAttribute("email", email);
+					
+					response.sendRedirect("mainFeed.jsp");
 				
-				String errorMessage = "Invalid email or password. Or bad google login. Please try again.";
-				response.setContentType("text/html");
-				
-	    		PrintWriter out = response.getWriter();
-	    		out.println("<span style='background-color:#ffcccb; width=100%;'>" + errorMessage + "</span>");
-	    		out.flush();
-	    		request.getRequestDispatcher("login.jsp").include(request, response);
+				}
+				else {
+					RequestDispatcher requestDispatcher = request
+				            .getRequestDispatcher("login.jsp");
+				    requestDispatcher.forward(request, response);	
+				}
 			}
+			catch (Exception ex) {
+					System.out.println("Exception: " + ex.getMessage());
+					//request.setAttribute("errorMessage", "Invalid email or password. Or, bad login. Please try again."
+					RequestDispatcher requestDispatcher = request
+				            .getRequestDispatcher("login.jsp");
+				    requestDispatcher.forward(request, response);	
+
+			}
+    	}
+    	 catch (ClassNotFoundException e) {
+ 			e.printStackTrace();
+ 		}
+     	
 			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
     }
 
     /**
