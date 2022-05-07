@@ -62,8 +62,7 @@ public class DetailsDispatcher extends HttpServlet {
     	String cleanliness = String.valueOf(bRoom.getCleanliness());
     	String waitTime = String.valueOf(bRoom.getWaitTime());
     	String img = bRoom.getImage();
-    	session.invalidate();
-    	
+    			
     	request.setAttribute("bathImg", img);
     	request.setAttribute("bathLoc", location);
     	request.setAttribute("bathRating", rating);

@@ -118,7 +118,10 @@
                 <p id="resultsTitle" class="blueTitle">We found the best bathrooms for you.</p>
             
            
-	           	 <%for (int i = 0; i < bathrooms.size(); i++) { 
+	           	 <%
+	           	 int min = (bathrooms.size() < 1) ? bathrooms.size() : 1;
+                
+	           	 for (int i = 0; i < min; i++) { 
 	           	 	Bathroom b = bathrooms.get(i);%>
 	           	 <div id="resultsDiv" >
 		            <div id="resultsData">

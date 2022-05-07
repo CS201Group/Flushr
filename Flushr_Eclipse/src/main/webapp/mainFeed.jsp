@@ -21,9 +21,9 @@
           <p1 id="slogan">for your bathroom needs.</p1>
         </div>
         <div id="menuButtons">
-            <button class="menuButton">saved</button>
-            <button class="menuButton active">search</button>
-            <button class="menuButton">profile</button>
+            <button class="menuButton" onclick="location.href='saved.jsp'">saved</button>
+            <button class="menuButton active" onclick="location.href='main.jsp'">search</button>
+            <button class="menuButton" onclick="location.href='profile.jsp'">profile</button>
         </div>
     </div>
     <form method="GET" action="SearchDispatcher2">

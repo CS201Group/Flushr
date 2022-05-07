@@ -36,32 +36,32 @@
     </div>
     
     
- <%  String bImg = (String) request.getAttribute("bathImg"); %>
+    <%Bathroom br = (Bathroom) request.getSession().getAttribute("selectedBathroom"); %>
     
     
     <form method="POST" action="DetailsDispatcher">
 	    <div id=detailsInfoDiv>
 		    <div class="brImgDiv">
-		    	<img class= "bathroomImg" alt="" src=<%out.write(bImg);%>">
+		    	<img class= "bathroomImg" alt="" src=<%out.write(br.getImage());%>">
 		    </div>
 		    <div class="detailsDiv">
-		    	<h1 class="blueTitle detailsTitle"><%%></h1>
+		    	<h1 class="blueTitle detailsTitle"><%out.write(br.getBathroomName());%></h1>
 		    	
 		    	<div class="dInfoDiv">
-			    	<h2 class="details">Location:<%%></h2>
-			    	<h2 class="details">Rating: <%%></h2>
-			    	<h2 class="details">Accessibility: <%%></h2>
-			    	<h2 class="details">Cleanliness: <%%></h2>
-			    	<h2 class="details">Wait Time: <%%></h2> 
+			    	<h2 class="details">Location: <%out.write(br.getBathroomLocation());%></h2>
+			    	<h2 class="details">Rating: <%out.write(String.valueOf(br.getRating())); %></h2>
+			    	<h2 class="details">Accessibility: <%out.write(String.valueOf(br.getAccessibility()));%></h2>
+			    	<h2 class="details">Cleanliness: <%out.write(String.valueOf(br.getCleanliness()));%></h2>
+			    	<h2 class="details">Wait Time: <%out.write(String.valueOf(br.getWaitTime()));%></h2> 
 		    	</div>
+		    	<%request.getSession().invalidate(); %>
 		    	<br><br><br><br><br><br>
 		    	<button class="blueTitle saveBathroom" name="saveEntry" formaction="DetailsDispatcher">Save</button>
 		    </div>
 	    </div>
     </form>
 		
-		<%request.getSession().removeAttribute("selectedBathroom");
-		request.getSession().invalidate();%>
+		
 		
 </body>
 </html>
