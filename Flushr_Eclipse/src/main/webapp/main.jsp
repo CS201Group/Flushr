@@ -15,7 +15,9 @@
     <script src="https://kit.fontawesome.com/adade898d1.js" crossorigin="anonymous"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
-    
+    <%@
+		page import="java.util.ArrayList,Util.BathroomDataParser,Util.Bathroom"
+    %>
   </head>
   
   <body>
@@ -102,28 +104,38 @@
             
 
             <!-- Results section -->
+             <% 
+            
+			ArrayList<Bathroom> bathrooms = (ArrayList<Bathroom>) request.getAttribute("bathroomResults");
+			if (bathrooms == null) { %>
+            <div id="resultsDiv" >
+                <p id="resultsTitle" class="blueTitle">Search a bathroom to get started.</p>
+            </div>
+            <%} else {%>
             <div id="resultsDiv" >
                 <p id="resultsTitle" class="blueTitle">We found the best bathrooms for you.</p>
             </div>
-
-            <!-- Results data -->
-            <div id="resultsData">
-                <div>
-                    <p class="resultText">Ronald Tutor Hall (RTC)</p>
-                </div>
-                <div id="mainDescriptionDiv">
-                    <div>
-                        <i class="fa-solid fa-paper-plane"></i>
-                        <p class="resultDist">0.1mi</p>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-face-smile"></i>
-                        <p class="resultRating">4.73/5</p>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
+           
+	           	 <%for (int i = 0; i < bathrooms.size(); i++) { %>
+		            <div id="resultsData">
+		            <div>
+		                <p class="resultText"><%out.write(bathrooms.get(i).getBathroomName());%></p>
+		            </div>
+		            <div id="mainDescriptionDiv">
+		                <div>
+		                    <i class="fa-solid fa-paper-plane"></i>
+		                    <p class="resultDist"><%out.write(String.valueOf(bathrooms.get(i).getCleanliness()));%></p>
+		                </div>
+		                <div>
+		                    <i class="fa-solid fa-face-smile"></i>
+		                    <p class="resultRating"><%out.write(String.valueOf(bathrooms.get(i).getRating()));%>/5.0</p>
+		                </div>
+		                <div></div>
+		            </div>
+            	 </div>
+	           <%  }
+			}
+			%>
         
     </form>
     
@@ -131,4 +143,6 @@
       
   </body>
 </html>
-	
+
+
+			

@@ -75,12 +75,12 @@ public class SearchDispatcher2 extends HttpServlet {
     	System.out.println("filter: " + filterCriteria);
     	System.out.println("sort: " + sortCriteria);
 
-    	request.getRequestDispatcher("main.jsp").forward(request, response);
+    
     	
     	if(searchType == null)
     		searchType = "";
     	if(filterCriteria == null)
-    		filterCriteria = "";
+    		filterCriteria = "Cleanliness";
     	if(sortCriteria == null)
     		sortCriteria = "Rating";
 
@@ -90,20 +90,16 @@ public class SearchDispatcher2 extends HttpServlet {
     		System.out.println("name:" + bath.getBathroomName());
     		System.out.println("location: " + bath.getBathroomLocation());
     		System.out.println("rating:" + bath.getRating());
-    		System.out.println("accessiibility: " + bath.getAccessibility());
+    		System.out.println("accessibility: " + bath.getAccessibility());
     		System.out.println("cleanliness:" + bath.getCleanliness());
     		System.out.println("wait_time: " + bath.getWaitTime());
     		
     		System.out.println();
     		
-    	}
-        
-    	
+    	}	
     		
-    		
-    		
-//    		request.setAttribute("results", results);
-//        	request.getRequestDispatcher("main.jsp").forward(request, response);
+    		request.setAttribute("bathroomResults", results);
+        	request.getRequestDispatcher("main.jsp").forward(request, response);
     	}
 
     /**

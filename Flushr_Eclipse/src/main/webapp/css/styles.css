@@ -92,7 +92,7 @@ p {
     line-height: 22px;
     text-align: right;
     color: #31393C;
-    display: inline-block;
+    display: inline;
 
 }
 
@@ -471,7 +471,7 @@ p {
 }
 
 #resultsData {
-    display: flex;
+    display: inline-block;
     justify-content: space-between;
 }
 
@@ -515,7 +515,7 @@ p {
 }
 
 #feedSearch{
-    width: 48.5%;
+    width: 100%;
     border: none;
     align-items: center;
     margin-right: 1%;    

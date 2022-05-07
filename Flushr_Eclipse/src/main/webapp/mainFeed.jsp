@@ -39,35 +39,16 @@
       <div id="feedDisplayHeader">
           <h1 id="feedSubHeader">Recently used</h1>
           <h1 id="feedSubHeader2">by people near you</h1>
+          <br>
+          <h1 id="feedSubHeader">No Results Found</h1>
       </div>
-      <div>
 
+		
       <!-- –––––––––––––––––––––NOT WORKING FOR SOME REASON––––––––––––––––––––– -->
       <!-- <div class="feedImgContainer">
         <img src="me10.jpg" class="feedImg"/>
       </div> -->
-      <div id="placeHolderImgFeed"></div>
-
-      <div class="feedDescription">
-        <div class="feedDesRow1">
-          <button class="brTitle">
-            Ronald Tutor Hall (RTC)
-          </button>
-          <div class="feedDirectionIcon">
-            <i class="fa-solid fa-paper-plane"></i>
-            <h1>0.1 mi</h1>
-          </div>
-        </div>
-
-        <div class="feedDesRow2">
-          <h1 id="feedStars">4.7 stars</h1>
-
-          <div class="feedWait">
-            <h1 class="feedWaitFont">average wait time: </h1>
-            <h1 class="feedWaitFont" style="padding-left: 10px;"> 1 min.</h1>
-          </div>
-        </div>  
-      </div>
+      
     </form>    
   </body>
 </html>
