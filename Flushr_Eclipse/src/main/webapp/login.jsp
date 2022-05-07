@@ -76,10 +76,10 @@
 
         <!-- Username -->  
         <div class="form-group row justify-content-center">
-          <label for="name-id" class="loginText col-sm-12 text-center form-label-style">Name: <span class="text-danger">*</span></label>
+          <label for="email-id" class="loginText col-sm-12 text-center form-label-style">Email: <span class="text-danger">*</span></label>
           <div class="col-sm-12 col-md-8 col-lg-6">
-            <input type="text" class="form-control" id="name-id" name="name">
-                              <h3 id="name-error" class="invalid-feedback">Name is required.</h3>
+            <input type="text" class="form-control" id="email-id" name="email">
+                              <h3 id="name-error" class="invalid-feedback">Email is required.</h3>
           </div>
         </div>
 

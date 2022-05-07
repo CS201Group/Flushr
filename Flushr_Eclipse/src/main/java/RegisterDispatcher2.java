@@ -95,12 +95,12 @@ public class RegisterDispatcher2 extends HttpServlet {
 					response.setContentType("text/html");
 		    		PrintWriter out = response.getWriter();
 		    		out.println("<span style='background-color:#ffcccb; width=100%;'>" + errorMessage + "</span>");
-		    		request.getRequestDispatcher("signup.html").include(request, response);
+		    		request.getRequestDispatcher("signup.jsp").include(request, response);
 				}
 				else {
 					// register the user
 					Helper2.registerUser(email, password);
-					response.sendRedirect("main.html");
+					response.sendRedirect("main.jsp");
 					//request.getRequestDispatcher("index.jsp").forward(request, response);
 				}
 			} catch (ServletException e) {
@@ -121,7 +121,7 @@ public class RegisterDispatcher2 extends HttpServlet {
     		response.setContentType("text/html");
     		PrintWriter out = response.getWriter();
     		out.println("<span style='background-color:#ffcccb; width=100%;'>" + errorMessage + "</span>");
-    		request.getRequestDispatcher("signup.html").include(request, response);
+    		request.getRequestDispatcher("signup.jsp").include(request, response);
     	}
     	
     }

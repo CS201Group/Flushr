@@ -37,11 +37,11 @@ public class LoginDispatcher2 extends HttpServlet {
         	
 			boolean isValidUser = Helper.checkPassword(email, password);
 			if (isValidUser) {
-				String name = Helper.getUserName(email);
-				Cookie cookie = new Cookie("name", name);
+				String userEmail = Helper.getUserName(email);
+				Cookie cookie = new Cookie("email", userEmail);
 				response.setContentType("text/html");
 				response.addCookie(cookie);
-				request.getSession().setAttribute("loggedInUser", name);
+				request.getSession().setAttribute("loggedInUser", userEmail);
 				response.sendRedirect("main.jsp");
 				//request.getRequestDispatcher("index.jsp").forward(request, response);
 			}
