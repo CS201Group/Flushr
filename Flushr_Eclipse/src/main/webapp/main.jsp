@@ -105,6 +105,8 @@
 
             <!-- Results section -->
              <% 
+             
+            
             
 			ArrayList<Bathroom> bathrooms = (ArrayList<Bathroom>) request.getAttribute("bathroomResults");
 			if (bathrooms == null) { %>
@@ -112,27 +114,28 @@
                 <p id="resultsTitle" class="blueTitle">Search a bathroom to get started.</p>
             </div>
             <%} else {%>
-            <div id="resultsDiv" >
+            	
                 <p id="resultsTitle" class="blueTitle">We found the best bathrooms for you.</p>
-            </div>
+            
            
-	           	 <%for (int i = 0; i < bathrooms.size(); i++) { %>
+	           	 <%for (int i = 0; i < bathrooms.size(); i++) { 
+	           	 	Bathroom b = bathrooms.get(i);%>
+	           	 <div id="resultsDiv" >
 		            <div id="resultsData">
 		            <div>
-		                <p class="resultText"><%out.write(bathrooms.get(i).getBathroomName());%></p>
+		                <button formaction="DetailsDispatcher" onclick="<%request.getSession().setAttribute("selectedBathroom",b);%>" name="<%bathrooms.get(i).getBathroomName();%>" class="resultText"><%out.write(bathrooms.get(i).getBathroomName());%></button>
 		            </div>
 		            <div id="mainDescriptionDiv">
-		                <div>
-		                    <i class="fa-solid fa-paper-plane"></i>
-		                    <p class="resultDist"><%out.write(String.valueOf(bathrooms.get(i).getCleanliness()));%></p>
-		                </div>
+
 		                <div>
 		                    <i class="fa-solid fa-face-smile"></i>
 		                    <p class="resultRating"><%out.write(String.valueOf(bathrooms.get(i).getRating()));%>/5.0</p>
 		                </div>
 		                <div></div>
 		            </div>
+		            </div>
             	 </div>
+           	
 	           <%  }
 			}
 			%>

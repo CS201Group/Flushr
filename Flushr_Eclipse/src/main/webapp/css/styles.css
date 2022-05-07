@@ -3,7 +3,7 @@
 body {
     background-color: hsl(44, 100%, 87%);
     height:35rem;
-    margin: 0px;
+    margin: 10px;
 }
 
 header {
@@ -70,9 +70,11 @@ p {
     font-size: 18px;
     line-height: 22px;
     text-align: left;
-    color: #31393C;
+    color: #2176FF;
     display: inline-block;
-
+	text-decoration: underline;
+	background: none;
+	border: none;
 }
 
 .feedDirectionIcon{
@@ -198,6 +200,62 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+}
+
+.detailsInfoDiv {
+	height: 30rem;
+	display: block;
+}
+
+.brImgDiv {
+	display: inline-block;
+	color: red;
+}
+
+
+.detailsDiv {
+	display: inline-block;
+	position: fixed;
+    top: 8rem;
+    width: 50%;
+    height: 40rem;
+    padding: 1rem;
+}
+
+.detailsTitle {
+	display: inline-block;
+}
+
+.bathroomImg {
+	margin: 3rem;
+	height: 40rem; 
+	object-fit: fill;
+}
+
+.saveBathroom {
+	
+	
+	border: none;
+	background: none;
+	
+	top: 9.5rem;
+	
+}
+
+.details {
+	font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.6rem;
+    background: none;
+    border: none;
+    color: #31393C;
+    
+    text-align: left;
+}
+
+.dInfoDiv {
+	
 }
 
 /* ----- IDs ----- */
@@ -471,7 +529,7 @@ p {
 }
 
 #resultsData {
-    display: inline-block;
+    display: flex;
     justify-content: space-between;
 }
 

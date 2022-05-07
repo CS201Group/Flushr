@@ -1,138 +1,67 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html>
-<html>
-<head>
+<html lang="en">
+  <head>
     <meta charset="UTF-8">
-    <title>Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flushr</title>
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-            href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@300&display=swap"
-            rel="stylesheet">
-    <script src="https://kit.fontawesome.com/3204349982.js"
-            crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="search.css">
-</head>
-<%
-    //TODO perform search
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://kit.fontawesome.com/adade898d1.js" crossorigin="anonymous"></script>
 
-    //TODO check if logged in
-%>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
+    <%@
+		page import="java.util.ArrayList,Util.BathroomDataParser,Util.Bathroom"
+    %>
+  </head>
 
-<%@ page import="java.util.ArrayList,Util.*"%>
+<%@page import="java.util.ArrayList,Util.BathroomDataParser,Util.Bathroom" %>
 
 <body>
 <!-- TODO -->
 
-<nav>
-			<span class ="salEatsBanner" id = "banner">
-					<a href="index.jsp">SalEats!</a>
-					
-					<% String userName = null;
-					userName = (String) session.getAttribute("userName");
- 
- 					if (userName != null) {
- 						out.write("<span class='potentialUsername'> Hi " + userName + "! </span>");
- 					}%>
-			</span>
-			
-			
-			
-			<!--  MAKE SURE TO COPY THIS LOGOUT SHIT TO OTHER JSP PAGES -->
-			
-			
-			<span class="homeAndLoginBanner">
-				<a href="index.jsp">Home &nbsp;</a>
-				<% 
-				if (userName == null) {
-					out.write("<a href='auth.jsp'/>&nbsp;" + "Login / Register" + "</a>");
-				}
-				else {
-					out.write("<a href='LogoutDispatcher'/>&nbsp;" + "Logout" + "</a>");
-				}%>
-			</span>			
-		</nav>
+	 <div id="mainHeaderDiv">
+        <div id="logo" onclick="location.href='main.jsp'">
+          <p1 id="headerTitle">FLUSHR.</p1>
+        </div>
+        
+        <div id="menuButtons">
+            <button class="menuButton active" onclick="location.href='main.jsp'">back</button>
+        </div>
+    </div>
+    
+    
+ <%  String bImg = (String) request.getAttribute("bathImg"); %>
+    
+    
+    <form method="POST" action="DetailsDispatcher">
+	    <div id=detailsInfoDiv>
+		    <div class="brImgDiv">
+		    	<img class= "bathroomImg" alt="" src=<%out.write(bImg);%>">
+		    </div>
+		    <div class="detailsDiv">
+		    	<h1 class="blueTitle detailsTitle"><%%></h1>
+		    	
+		    	<div class="dInfoDiv">
+			    	<h2 class="details">Location:<%%></h2>
+			    	<h2 class="details">Rating: <%%></h2>
+			    	<h2 class="details">Accessibility: <%%></h2>
+			    	<h2 class="details">Cleanliness: <%%></h2>
+			    	<h2 class="details">Wait Time: <%%></h2> 
+		    	</div>
+		    	<br><br><br><br><br><br>
+		    	<button class="blueTitle saveBathroom" name="saveEntry" formaction="DetailsDispatcher">Save</button>
+		    </div>
+	    </div>
+    </form>
 		
-	<hr />
-	
-	<br>
-	
-	<form class="footerForm" action="SearchDispatcher" method="GET">
-			<select name="searchSelect" id="category" required>
-				<option value="Category">Category</option>
-				<option value="Name">Name</option>	
-			</select>
-			
- 			<input type="search" id="gsearch" name="gsearch" class="searchBar">
-
- 			<button type="submit"><i class="fa fa-search"></i></button>
- 			
- 			<span class="formRadios">
- 				
-	 			<input type="radio" name="sortCriteria" value="Price" />
-				<label for="Price">Price</label>
-				
-				<input type="radio" name="sortCriteria" value="ReviewCount"/>
-				<label for="Review count">Review Count</label>
-				
-				<input type="radio" name="sortCriteria" value="Rating"/>
-				<label for="Rating">Rating</label>
-				
-			</span>
-		</form>
-		<br><br><br><br><br><br>
-		
-<% Restaurant r = (Restaurant)request.getAttribute("detailsRest"); //System.out.println(r.getName()); %>
-<% String s = r.getName(); out.print(s); %>
-				 
-			</h1>	
-					
-						<div>
-							<div id="imageArea">
-								<img  id="image" src="<%out.write(r.getImageUrl());%>" /> 
-								
-							</div>
-							<div id="textArea">
-								<div id="restText">
-									<p>Address: 
-									<%out.write(r.getLocation().getAddress1());%>
-									</p>
-				
-									<p>
-									<% out.write(r.getPhone());%>
-									</p>
-									
-									<p >Categories: 
-									<%
-									for (int i = 0; i < r.getCategories().size(); i++) {
-										if (i != r.getCategories().size() -1) {
-											out.write(r.getCategories().get(i).getTitle() + ", ");
-										}
-										else {
-											out.write(r.getCategories().get(i).getTitle());
-										}
-									}
-									%>
-									</p>
-									<p>
-									Price: <%out.write(r.getPrice());%>
-									</p>
-
-									<p>
-									Rating: <% Double stars = (r.getRating());
-									for (int j = 0; j < stars;j++) {
-										out.write("&starf;");
-									}
-									%>
-									</p>
-								</div>
-							</div>
-						</div>
-					
-		
-		
+		<%request.getSession().removeAttribute("selectedBathroom");
+		request.getSession().invalidate();%>
 		
 </body>
 </html>
