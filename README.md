@@ -34,8 +34,3 @@ Flushr makes use of the following technologies:
 Flushr first gained inspiration from the IBS (irritable bowel syndrome) community, our intended end users. IBS is a common, chronic GI (gastrointestinal) disorder affecting the digestive system — this often means they need to be prepared to find a bathroom near them at all times. Flushr makes that easy.
 
 Although the IBS community is our intended audience, this can be used universally by USC students. Whether you're in a hurry or unfamiliar with the campus, Flushr can sure be handy in the right time.
-
-
-## What is Flushr's goal?
-
-
