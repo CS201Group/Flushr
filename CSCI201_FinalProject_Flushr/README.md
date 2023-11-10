@@ -24,6 +24,3 @@ Flushr first gained inspiration from the IBS (irritable bowel syndrome) communit
 Although the IBS community is our intended audience, this can be used universally by USC students. Whether you're in a hurry or unfamiliar with the campus, Flushr can sure be handy in the right time.
 
 
-## What is Flushr's goal?
-
-
